@@ -36,6 +36,12 @@ docker-compose run --rm terraform init \
   -backend-config="region=${AWS_S3_BUCKET_TERRAFORM_STATE_REGION}"
 ```
 
+### Create resources on AWS
+
+```bash
+docker-compose run --rm terraform apply
+```
+
 ## Resources
 
 The mastodon module in this repository will create the following resources:
