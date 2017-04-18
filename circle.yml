@@ -9,14 +9,15 @@ dependencies:
     - git clone https://github.com/tootsuite/mastodon.git
     - docker build --file ./docker/rails/Dockerfile --tag mastodon_rails_without_assets ./mastodon
     - docker run --env RAILS_ENV=production --volume $(pwd)/public/assets:/app/public/assets mastodon_rails_without_assets bundle exec rake assets:precompile
-    - docker build --file ./docker/rails/Dockerfile --tag ${DOCKER_REPOSITORY_URL}:${CIRCLE_BUILD_NUM} ./mastodon
-    - docker build --file ./docker/node/Dockerfile --tag mastodon_node ./mastodon
+    - docker build --file ./docker/rails/Dockerfile --tag ${DOCKER_REPOSITORY_URL_RAILS}:${CIRCLE_BUILD_NUM} ./mastodon
+    - docker build --file ./docker/node/Dockerfile --tag ${DOCKER_REPOSITORY_URL_NODE}:${CIRCLE_BUILD_NUM} ./mastodon
 deployment:
   master:
     branch: master
     commands:
       - eval $(aws ecr get-login --region ${AWS_REGION})
-      - docker push ${DOCKER_REPOSITORY_URL}:${CIRCLE_BUILD_NUM}
+      - docker push ${DOCKER_REPOSITORY_URL_NODE}:${CIRCLE_BUILD_NUM}
+      - docker push ${DOCKER_REPOSITORY_URL_RAILS}:${CIRCLE_BUILD_NUM}
 test:
   override:
     - echo "Skip test phase"
