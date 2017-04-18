@@ -23,7 +23,7 @@ resource "aws_ecs_task_definition" "mastodon_db_migration" {
         "value": "redis://${aws_elasticache_cluster.mastodon.cache_nodes.0.address}:${aws_elasticache_cluster.mastodon.cache_nodes.0.port}/0"
       },
     ],
-    "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_rails_revision}",
+    "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
     "memory": 490,
     "name": "mastodon_db_migration"
   }
@@ -56,7 +56,7 @@ resource "aws_ecs_task_definition" "mastodon_puma" {
         "value": "redis://${aws_elasticache_cluster.mastodon.cache_nodes.0.address}:${aws_elasticache_cluster.mastodon.cache_nodes.0.port}/0"
       },
     ],
-    "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_rails_revision}",
+    "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
     "memory": 490,
     "name": "mastodon_puma",
     "portMappings": [
@@ -95,9 +95,76 @@ resource "aws_ecs_task_definition" "mastodon_sidekiq" {
         "value": "redis://${aws_elasticache_cluster.mastodon.cache_nodes.0.address}:${aws_elasticache_cluster.mastodon.cache_nodes.0.port}/0"
       },
     ],
-    "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_rails_revision}",
+    "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
     "memory": 490,
     "name": "mastodon_sidekiq"
+  }
+]
+  JSON
+}
+
+resource "aws_ecs_task_definition" "mastodon_streaming" {
+  family = "mastodon_streaming"
+
+  container_definitions = <<-JSON
+[
+  {
+    "command": ["yarn", "run", "start"],
+    "environment": [
+      {
+        "name": "DB_HOST",
+        "value": "",
+      },
+      {
+        "name": "DB_NAME",
+        "value": "",
+      },
+      {
+        "name": "DB_PASS",
+        "value": "",
+      },
+      {
+        "name": "DB_PORT",
+        "value": "",
+      },
+      {
+        "name": "DB_USER",
+        "value": "",
+      },
+      {
+        "name": "LOG_LEVEL",
+        "value": "",
+      },
+      {
+        "name": "NODE_ENV",
+        "value": "production"
+      },
+      {
+        "name": "PORT",
+        "value": "",
+      },
+      {
+        "name": "REDIS_HOST",
+        "value": "",
+      },
+      {
+        "name": "REDIS_PASSWOR",
+        "value": "",
+      },
+      {
+        "name": "REDIS_PORT",
+        "value": "",
+      }
+    ],
+    "image": "${replace(aws_ecr_repository.mastodon_node.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+    "memory": 490,
+    "name": "mastodon_streaming",
+    "portMappings": [
+      {
+        "containerPort": 4000,
+        "protocol": "tcp"
+      }
+    ]
   }
 ]
   JSON

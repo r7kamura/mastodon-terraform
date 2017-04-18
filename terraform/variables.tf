@@ -6,6 +6,6 @@ variable "mastodon_db_root_password" {}
 
 variable "mastodon_db_root_username" {}
 
-variable "mastodon_rails_revision" {}
+variable "mastodon_docker_image_tag" {}
 
 variable "mastodon_secret_key_base" {}
