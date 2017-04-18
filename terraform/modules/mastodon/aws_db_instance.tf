@@ -5,7 +5,7 @@ resource "aws_db_instance" "mastodon" {
   backup_window              = "20:00-21:00"
   db_subnet_group_name       = "${aws_db_subnet_group.mastodon.name}"
   engine                     = "postgres"
-  engine_version             = "9.5.2"
+  engine_version             = "9.6.1"
   identifier                 = "mastodon"
   instance_class             = "db.t2.micro"
   multi_az                   = false
