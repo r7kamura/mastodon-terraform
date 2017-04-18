@@ -42,7 +42,7 @@ resource "aws_ecs_task_definition" "mastodon_sidekiq" {
   container_definitions = <<-JSON
   [
     {
-      "command": ["bundle", "exec", "sidekiq", "--queue", "high", "--queue", "low"],
+      "command": ["bundle", "exec", "sidekiq", "--queue", "default", "--queue", "mailers", "--queue", "--pull", "--queue", "push"],
       "environment": ${data.template_file.mastodon_environment_variables_rails.rendered},
       "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
       "memory": 490,
