@@ -36,8 +36,6 @@ variable "mastodon_paperclip_secret" {}
 
 variable "mastodon_prepared_statements" {}
 
-variable "mastodon_redis_password" {}
-
 variable "mastodon_s3_bucket" {}
 
 variable "mastodon_s3_cloudfront_host" {}

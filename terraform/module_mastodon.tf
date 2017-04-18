@@ -18,7 +18,6 @@ module "mastodon" {
   mastodon_paperclip_root_url        = "${var.mastodon_paperclip_root_url}"
   mastodon_paperclip_secret          = "${var.mastodon_paperclip_secret}"
   mastodon_prepared_statements       = "${var.mastodon_prepared_statements}"
-  mastodon_redis_password            = "${var.mastodon_redis_password}"
   mastodon_s3_bucket                 = "${var.mastodon_s3_bucket}"
   mastodon_s3_cloudfront_host        = "${var.mastodon_s3_cloudfront_host}"
   mastodon_s3_enabled                = "${var.mastodon_s3_enabled}"

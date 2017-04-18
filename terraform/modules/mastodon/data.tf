@@ -74,10 +74,6 @@ data "template_file" "mastodon_environment_variables_rails" {
       "value": "$${mastodon_redis_host}"
     },
     {
-      "name": "REDIS_PASSWORD",
-      "value": "$${mastodon_redis_password}"
-    },
-    {
       "name": "REDIS_PORT",
       "value": "$${mastodon_redis_port}"
     },
@@ -191,7 +187,6 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_paperclip_secret          = "${var.mastodon_paperclip_secret}"
     mastodon_prepared_statements       = "${var.mastodon_prepared_statements}"
     mastodon_redis_host                = "${aws_elasticache_cluster.mastodon.cache_nodes.0.address}"
-    mastodon_redis_password            = "${var.mastodon_redis_password}"
     mastodon_redis_port                = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
     mastodon_s3_bucket                 = "${var.mastodon_s3_bucket}"
     mastodon_s3_cloudfront_host        = "${var.mastodon_s3_cloudfront_host}"
@@ -258,10 +253,6 @@ data "template_file" "mastodon_environment_variables_streaming" {
       "value": "$${mastodon_redis_host}"
     },
     {
-      "name": "REDIS_PASSWORD",
-      "value": "$${mastodon_redis_password}"
-    },
-    {
       "name": "REDIS_PORT",
       "value": "$${mastodon_redis_port}"
     }
@@ -278,7 +269,6 @@ data "template_file" "mastodon_environment_variables_streaming" {
     mastodon_node_env            = "${var.mastodon_node_env}"
     mastodon_streaming_port      = "${var.mastodon_streaming_port}"
     mastodon_redis_host          = "${aws_elasticache_cluster.mastodon.cache_nodes.0.address}"
-    mastodon_redis_password      = "${var.mastodon_redis_password}"
     mastodon_redis_port          = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
   }
 }

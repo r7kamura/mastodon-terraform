@@ -58,8 +58,6 @@ variable "mastodon_prepared_statements" {
   default = "true"
 }
 
-variable "mastodon_redis_password" {}
-
 variable "mastodon_s3_bucket" {}
 
 variable "mastodon_s3_cloudfront_host" {}
