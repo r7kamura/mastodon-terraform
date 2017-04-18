@@ -120,18 +120,18 @@ variable "mastodon_smtp_server" {
   default = ""
 }
 
-variable "mastodon_streaming_api_base_url" {
+variable "mastodon_node_streaming_api_base_url" {
   default = ""
 }
 
-variable "mastodon_streaming_cluster_num" {
+variable "mastodon_node_streaming_cluster_num" {
   default = "1"
 }
 
-variable "mastodon_streaming_log_level" {
+variable "mastodon_node_streaming_log_level" {
   default = "verbose"
 }
 
-variable "mastodon_streaming_port" {
+variable "mastodon_node_streaming_port" {
   default = "4000"
 }

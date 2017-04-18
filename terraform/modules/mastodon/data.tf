@@ -159,11 +159,11 @@ data "template_file" "mastodon_environment_variables_rails" {
     },
     {
       "name": "STREAMING_API_BASE_URL",
-      "value": "$${mastodon_streaming_api_base_url}"
+      "value": "$${mastodon_node_streaming_api_base_url}"
     },
     {
       "name": "STREAMING_CLUSTER_NUM",
-      "value": "$${mastodon_streaming_cluster_num}"
+      "value": "$${mastodon_node_streaming_cluster_num}"
     }
   ]
   JSON
@@ -208,8 +208,8 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_smtp_password             = "${var.mastodon_smtp_password}"
     mastodon_smtp_port                 = "${var.mastodon_smtp_port}"
     mastodon_smtp_server               = "${var.mastodon_smtp_server}"
-    mastodon_streaming_api_base_url    = "${var.mastodon_streaming_api_base_url}"
-    mastodon_streaming_cluster_num     = "${var.mastodon_streaming_cluster_num}"
+    mastodon_node_streaming_api_base_url    = "${var.mastodon_node_streaming_api_base_url}"
+    mastodon_node_streaming_cluster_num     = "${var.mastodon_node_streaming_cluster_num}"
   }
 }
 
@@ -238,7 +238,7 @@ data "template_file" "mastodon_environment_variables_streaming" {
     },
     {
       "name": "LOG_LEVEL",
-      "value": "$${mastodon_streaming_log_level}"
+      "value": "$${mastodon_node_streaming_log_level}"
     },
     {
       "name": "NODE_ENV",
@@ -246,7 +246,7 @@ data "template_file" "mastodon_environment_variables_streaming" {
     },
     {
       "name": "PORT",
-      "value": "$${mastodon_streaming_port}"
+      "value": "$${mastodon_node_streaming_port}"
     },
     {
       "name": "REDIS_HOST",
@@ -265,9 +265,9 @@ data "template_file" "mastodon_environment_variables_streaming" {
     mastodon_db_pass             = "${var.mastodon_db_pass}"
     mastodon_db_port             = "${aws_db_instance.mastodon.port}"
     mastodon_db_user             = "${aws_db_instance.mastodon.username}"
-    mastodon_streaming_log_level = "${var.mastodon_streaming_log_level}"
+    mastodon_node_streaming_log_level = "${var.mastodon_node_streaming_log_level}"
     mastodon_node_env            = "${var.mastodon_node_env}"
-    mastodon_streaming_port      = "${var.mastodon_streaming_port}"
+    mastodon_node_streaming_port      = "${var.mastodon_node_streaming_port}"
     mastodon_redis_host          = "${aws_elasticache_cluster.mastodon.cache_nodes.0.address}"
     mastodon_redis_port          = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
   }

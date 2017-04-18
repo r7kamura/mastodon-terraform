@@ -37,9 +37,9 @@ module "mastodon" {
   mastodon_smtp_password             = "${var.mastodon_smtp_password}"
   mastodon_smtp_port                 = "${var.mastodon_smtp_port}"
   mastodon_smtp_server               = "${var.mastodon_smtp_server}"
-  mastodon_streaming_api_base_url    = "${var.mastodon_streaming_api_base_url}"
-  mastodon_streaming_cluster_num     = "${var.mastodon_streaming_cluster_num}"
-  mastodon_streaming_log_level       = "${var.mastodon_streaming_log_level}"
-  mastodon_streaming_port            = "${var.mastodon_streaming_port}"
+  mastodon_node_streaming_api_base_url    = "${var.mastodon_node_streaming_api_base_url}"
+  mastodon_node_streaming_cluster_num     = "${var.mastodon_node_streaming_cluster_num}"
+  mastodon_node_streaming_log_level       = "${var.mastodon_node_streaming_log_level}"
+  mastodon_node_streaming_port            = "${var.mastodon_node_streaming_port}"
   source                             = "./modules/mastodon"
 }
