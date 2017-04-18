@@ -6,17 +6,15 @@ variable "mastodon_aws_access_key_id" {}
 
 variable "mastodon_aws_secret_access_key" {}
 
-variable "mastodon_cdn_host" {}
-
-variable "mastodon_db_host" {}
-
-variable "mastodon_db_name" {}
+variable "mastodon_db_name" {
+  default = "mastodon"
+}
 
 variable "mastodon_db_pass" {}
 
-variable "mastodon_db_port" {}
-
-variable "mastodon_db_user" {}
+variable "mastodon_db_user" {
+  default = "root"
+}
 
 variable "mastodon_default_locale" {
   default = "en"
@@ -24,9 +22,13 @@ variable "mastodon_default_locale" {
 
 variable "mastodon_docker_image_tag" {}
 
-variable "mastodon_email_domain_blacklist" {}
+variable "mastodon_email_domain_blacklist" {
+  default = ""
+}
 
-variable "mastodon_email_domain_whitelist" {}
+variable "mastodon_email_domain_whitelist" {
+  default = ""
+}
 
 variable "mastodon_local_domain" {
   default = "example.com"
@@ -56,18 +58,14 @@ variable "mastodon_prepared_statements" {
   default = "true"
 }
 
-variable "mastodon_redis_host" {}
-
 variable "mastodon_redis_password" {}
-
-variable "mastodon_redis_port" {}
 
 variable "mastodon_s3_bucket" {}
 
 variable "mastodon_s3_cloudfront_host" {}
 
 variable "mastodon_s3_enabled" {
-  default = "true"
+  default = "false"
 }
 
 variable "mastodon_s3_endpoint" {}
@@ -84,27 +82,49 @@ variable "mastodon_single_user_mode" {
   default = "false"
 }
 
-variable "mastodon_smtp_auth_method" {}
+variable "mastodon_smtp_auth_method" {
+  default = "plain"
+}
 
-variable "mastodon_smtp_delivery_method" {}
+variable "mastodon_smtp_delivery_method" {
+  default = "smtp"
+}
 
-variable "mastodon_smtp_domain" {}
+variable "mastodon_smtp_domain" {
+  default = "example.com"
+}
 
-variable "mastodon_smtp_enable_starttls_auto" {}
+variable "mastodon_smtp_enable_starttls_auto" {
+  default = ""
+}
 
-variable "mastodon_smtp_from_address" {}
+variable "mastodon_smtp_from_address" {
+  default = ""
+}
 
-variable "mastodon_smtp_login" {}
+variable "mastodon_smtp_login" {
+  default = ""
+}
 
-variable "mastodon_smtp_openssl_verify_mode" {}
+variable "mastodon_smtp_openssl_verify_mode" {
+  default = ""
+}
 
-variable "mastodon_smtp_password" {}
+variable "mastodon_smtp_password" {
+  default = ""
+}
 
-variable "mastodon_smtp_port" {}
+variable "mastodon_smtp_port" {
+  default = ""
+}
 
-variable "mastodon_smtp_server" {}
+variable "mastodon_smtp_server" {
+  default = ""
+}
 
-variable "mastodon_streaming_api_base_url" {}
+variable "mastodon_streaming_api_base_url" {
+  default = ""
+}
 
 variable "mastodon_streaming_cluster_num" {
   default = "1"

@@ -6,15 +6,9 @@ variable "mastodon_aws_access_key_id" {}
 
 variable "mastodon_aws_secret_access_key" {}
 
-variable "mastodon_cdn_host" {}
-
-variable "mastodon_db_host" {}
-
 variable "mastodon_db_name" {}
 
 variable "mastodon_db_pass" {}
-
-variable "mastodon_db_port" {}
 
 variable "mastodon_db_user" {}
 
@@ -42,11 +36,7 @@ variable "mastodon_paperclip_secret" {}
 
 variable "mastodon_prepared_statements" {}
 
-variable "mastodon_redis_host" {}
-
 variable "mastodon_redis_password" {}
-
-variable "mastodon_redis_port" {}
 
 variable "mastodon_s3_bucket" {}
 
