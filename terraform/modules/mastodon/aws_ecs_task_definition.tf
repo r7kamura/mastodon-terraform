@@ -12,7 +12,7 @@ resource "aws_ecs_task_definition" "mastodon_db_migration" {
         "options": {
           "awslogs-group": "mastodon",
           "awslogs-region": "${var.aws_region}",
-          "awslogs-stream-prefix": "puma"
+          "awslogs-stream-prefix": "migration"
         }
       },
       "memory": 490,
@@ -66,7 +66,7 @@ resource "aws_ecs_task_definition" "mastodon_sidekiq" {
         "options": {
           "awslogs-group": "mastodon",
           "awslogs-region": "${var.aws_region}",
-          "awslogs-stream-prefix": "puma"
+          "awslogs-stream-prefix": "sidekiq"
         }
       },
       "memory": 490,
@@ -90,7 +90,7 @@ resource "aws_ecs_task_definition" "mastodon_streaming" {
         "options": {
           "awslogs-group": "mastodon",
           "awslogs-region": "${var.aws_region}",
-          "awslogs-stream-prefix": "puma"
+          "awslogs-stream-prefix": "streaming"
         }
       },
       "memory": 490,
