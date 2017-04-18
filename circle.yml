@@ -1,6 +1,6 @@
 machine:
   environment:
-    DOCKER_IMAGE_NAME_AND_TAG: hashicorp/terraform:0.9.3
+    TERRAFORM_DOCKER_IMAGE_NAME: hashicorp/terraform:0.9.3
   services:
     - docker
 database:
@@ -8,7 +8,7 @@ database:
     - echo "Skip database phase"
 dependencies:
   override:
-    - docker pull ${DOCKER_IMAGE_NAME_AND_TAG}
+    - docker pull ${TERRAFORM_DOCKER_IMAGE_NAME}
     - echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> .env
     - echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> .env
     - echo TF_VAR_aws_launch_configuration_ami_id=${TF_VAR_aws_launch_configuration_ami_id} >> .env
@@ -18,7 +18,7 @@ dependencies:
     - echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env
     - echo TF_VAR_mastodon_secret_key_base=${TF_VAR_mastodon_secret_key_base} >> .env
     - >
-      docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${DOCKER_IMAGE_NAME_AND_TAG} init \
+      docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${TERRAFORM_DOCKER_IMAGE_NAME} init \
         -backend=true \
         -backend-config="bucket=${AWS_S3_BUCKET_TERRAFORM_STATE_NAME}" \
         -backend-config="key=${AWS_S3_BUCKET_TERRAFORM_STATE_KEY}" \
@@ -27,15 +27,14 @@ deployment:
   master:
     branch: master
     commands:
+      - docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${TERRAFORM_DOCKER_IMAGE_NAME} apply
       - git clone https://github.com/tootsuite/mastodon.git
-      - docker build --file ./docker/rails/Dockerfile --tag mastodon_rails_without_assets ./mastodon
-      - docker run --env RAILS_ENV=production --volume $(pwd)/public/assets:/app/public/assets mastodon_rails_without_assets bundle exec rake assets:precompile
-      - docker build --file ./docker/rails/Dockerfile --tag ${DOCKER_REPOSITORY_URL_RAILS}:${CIRCLE_BUILD_NUM} ./mastodon
-      - docker build --file ./docker/node/Dockerfile --tag ${DOCKER_REPOSITORY_URL_NODE}:${CIRCLE_BUILD_NUM} ./mastodon
+      - docker build --tag mastodon mastodon
+      - docker run --env SECRET_KEY_BASE=dummy --volume $(pwd)/mastodon/public/assets:/mastodon/public/assets mastodon bundle exec rake assets:precompile
+      - rm mastodon/.dockerignore
+      - docker build --tag ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${CIRCLE_BUILD_NUM} mastodon
       - eval $(aws ecr get-login --region ${AWS_REGION})
-      - docker push ${DOCKER_REPOSITORY_URL_NODE}:${CIRCLE_BUILD_NUM}
-      - docker push ${DOCKER_REPOSITORY_URL_RAILS}:${CIRCLE_BUILD_NUM}
-      - docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${DOCKER_IMAGE_NAME_AND_TAG} apply
+      - docker push ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${CIRCLE_BUILD_NUM}
 test:
   override:
-    - docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${DOCKER_IMAGE_NAME_AND_TAG} plan
+    - docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${TERRAFORM_DOCKER_IMAGE_NAME} plan
