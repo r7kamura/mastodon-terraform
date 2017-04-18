@@ -23,7 +23,7 @@ data "template_file" "mastodon_environment_variables_streaming" {
     },
     {
       "name": "LOG_LEVEL",
-      "value": "$${mastodon_log_level}",
+      "value": "$${mastodon_streaming_log_level}",
     },
     {
       "name": "NODE_ENV",
@@ -144,7 +144,7 @@ data "template_file" "mastodon_environment_variables_rails" {
     },
     {
       "name": "REDIS_PORT",
-      "value": "$${mastidon_redis_port}",
+      "value": "$${mastodon_redis_port}",
     },
     {
       "name": "S3_BUCKET",
