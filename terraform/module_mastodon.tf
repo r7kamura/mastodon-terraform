@@ -15,7 +15,6 @@ module "mastodon" {
   mastodon_email_domain_whitelist    = "${var.mastodon_email_domain_whitelist}"
   mastodon_local_domain              = "${var.mastodon_local_domain}"
   mastodon_local_https               = "${var.mastodon_local_https}"
-  mastodon_log_level                 = "${var.mastodon_log_level}"
   mastodon_node_env                  = "${var.mastodon_node_env}"
   mastodon_otp_secret                = "${var.mastodon_otp_secret}"
   mastodon_paperclip_root_path       = "${var.mastodon_paperclip_root_path}"
@@ -46,6 +45,7 @@ module "mastodon" {
   mastodon_smtp_server               = "${var.mastodon_smtp_server}"
   mastodon_streaming_api_base_url    = "${var.mastodon_streaming_api_base_url}"
   mastodon_streaming_cluster_num     = "${var.mastodon_streaming_cluster_num}"
+  mastodon_streaming_log_level       = "${var.mastodon_streaming_log_level}"
   mastodon_streaming_port            = "${var.mastodon_streaming_port}"
   source                             = "./modules/mastodon"
 }

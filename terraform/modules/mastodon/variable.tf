@@ -30,8 +30,6 @@ variable "mastodon_local_domain" {}
 
 variable "mastodon_local_https" {}
 
-variable "mastodon_log_level" {}
-
 variable "mastodon_node_env" {}
 
 variable "mastodon_otp_secret" {}
@@ -91,5 +89,7 @@ variable "mastodon_smtp_server" {}
 variable "mastodon_streaming_api_base_url" {}
 
 variable "mastodon_streaming_cluster_num" {}
+
+variable "mastodon_streaming_log_level" {}
 
 variable "mastodon_streaming_port" {}

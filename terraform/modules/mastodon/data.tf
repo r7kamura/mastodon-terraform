@@ -23,7 +23,7 @@ data "template_file" "mastodon_environment_variables_streaming" {
     },
     {
       "name": "LOG_LEVEL",
-      "value": "${var.mastodon_log_level}",
+      "value": "${var.mastodon_streaming_log_level}",
     },
     {
       "name": "NODE_ENV",
@@ -49,17 +49,17 @@ data "template_file" "mastodon_environment_variables_streaming" {
   JSON
 
   vars {
-    mastodon_db_host        = "${var.mastodon_db_host}"
-    mastodon_db_name        = "${var.mastodon_db_name}"
-    mastodon_db_pass        = "${var.mastodon_db_pass}"
-    mastodon_db_port        = "${var.mastodon_db_port}"
-    mastodon_db_user        = "${var.mastodon_db_user}"
-    mastodon_log_level      = "${var.mastodon_log_level}"
-    mastodon_node_env       = "${var.mastodon_node_env}"
-    mastodon_redis_host     = "${var.mastodon_redis_host}"
-    mastodon_redis_password = "${var.mastodon_redis_password}"
-    mastodon_redis_port     = "${var.mastodon_redis_port}"
-    mastodon_streaming_port = "${var.mastodon_streaming_port}"
+    mastodon_db_host             = "${var.mastodon_db_host}"
+    mastodon_db_name             = "${var.mastodon_db_name}"
+    mastodon_db_pass             = "${var.mastodon_db_pass}"
+    mastodon_db_port             = "${var.mastodon_db_port}"
+    mastodon_db_user             = "${var.mastodon_db_user}"
+    mastodon_streaming_log_level = "${var.mastodon_streaming_log_level}"
+    mastodon_node_env            = "${var.mastodon_node_env}"
+    mastodon_redis_host          = "${var.mastodon_redis_host}"
+    mastodon_redis_password      = "${var.mastodon_redis_password}"
+    mastodon_redis_port          = "${var.mastodon_redis_port}"
+    mastodon_streaming_port      = "${var.mastodon_streaming_port}"
   }
 }
 
