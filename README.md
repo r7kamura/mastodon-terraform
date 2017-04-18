@@ -4,25 +4,28 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 
 ## Requirements
 
-- Docker 1.13 or later version
-- S3 bucket (to store terraform state)
+- [Docker](https://www.docker.com/) 1.13 or later version
+- AWS S3 bucket (to store terraform state)
+- [aws-cli](https://github.com/aws/aws-cli)
 
 ## Usage
 
-### Pull docker image
+### 1. Pull terraform docker image
 
 ```bash
 docker-compose pull
 ```
 
-### Configure environment variables
+### 2. Customize environment variables
 
 ```bash
 cp .env.dummy .env
 vi .env
 ```
 
-### Initialize terraform state
+See [terraform/variable.tf](/terraform/variable.tf) for more details about available variables.
+
+### 3. Initialize terraform state
 
 - `AWS_S3_BUCKET_TERRAFORM_STATE_NAME` (e.g. `my-mastodon-terraform-state`)
 - `AWS_S3_BUCKET_TERRAFORM_STATE_KEY` (e.g. `terraform.tfstate`)
@@ -36,15 +39,32 @@ docker-compose run --rm terraform init \
   -backend-config="region=${AWS_S3_BUCKET_TERRAFORM_STATE_REGION}"
 ```
 
-### Create resources on AWS
+### 4. Create resources on AWS
 
 ```bash
 docker-compose run --rm terraform apply
 ```
 
+### 5. Build docker image
+
+```bash
+git clone https://github.com/tootsuite/mastodon.git
+docker build --tag mastodon mastodon
+docker run --env SECRET_KEY_BASE=dummy --volume $(pwd)/mastodon/public/assets:/mastodon/public/assets mastodon bundle exec rake assets:precompile
+rm mastodon/.dockerignore
+docker build --tag ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${TF_VAR_mastodon_docker_image_tag} mastodon
+```
+
+### 6. Push docker image
+
+```bash
+eval $(aws ecr get-login --region ${AWS_REGION})
+docker push ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${TF_VAR_mastodon_docker_image_tag}
+```
+
 ## Resources
 
-The mastodon module in this repository will create the following resources:
+This boilerplate will create the following resources:
 
 - module.mastodon.aws_alb_listener.mastodon
 - module.mastodon.aws_alb_target_group.mastodon
