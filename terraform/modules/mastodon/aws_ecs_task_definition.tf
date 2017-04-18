@@ -12,11 +12,35 @@ resource "aws_ecs_task_definition" "mastodon_db_migration" {
         "options": {
           "awslogs-group": "mastodon",
           "awslogs-region": "${var.aws_region}",
-          "awslogs-stream-prefix": "migration"
+          "awslogs-stream-prefix": "db_migration"
         }
       },
       "memory": 490,
       "name": "mastodon_db_migration"
+    }
+  ]
+  JSON
+}
+
+resource "aws_ecs_task_definition" "mastodon_db_set_up" {
+  family = "mastodon_db_set_up"
+
+  container_definitions = <<-JSON
+  [
+    {
+      "command": ["bundle", "exec", "rails", "db:setup"],
+      "environment": ${data.template_file.mastodon_environment_variables_rails.rendered},
+      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "mastodon",
+          "awslogs-region": "${var.aws_region}",
+          "awslogs-stream-prefix": "db_set_up"
+        }
+      },
+      "memory": 490,
+      "name": "mastodon_db_set_up"
     }
   ]
   JSON

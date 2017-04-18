@@ -79,6 +79,7 @@ This boilerplate will create the following resources:
 - module.mastodon.aws_ecs_service.mastodon_puma
 - module.mastodon.aws_ecs_service.mastodon_sidekiq
 - module.mastodon.aws_ecs_task_definition.mastodon_db_migration
+- module.mastodon.aws_ecs_task_definition.mastodon_db_set_up
 - module.mastodon.aws_ecs_task_definition.mastodon_puma
 - module.mastodon.aws_ecs_task_definition.mastodon_sidekiq
 - module.mastodon.aws_ecs_task_definition.mastodon_streaming
