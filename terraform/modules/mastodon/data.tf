@@ -143,6 +143,10 @@ data "template_file" "mastodon_environment_variables_rails" {
       "value": "${var.mastodon_redis_host}",
     },
     {
+      "name": "REDIS_PASSWORD",
+      "value": "${var.mastodon_redis_password}",
+    },
+    {
       "name": "REDIS_PORT",
       "value": "${var.mastodon_redis_port}",
     },
