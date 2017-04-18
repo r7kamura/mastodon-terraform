@@ -4,6 +4,7 @@ resource "aws_ecs_service" "mastodon_puma" {
   deployment_minimum_healthy_percent = 50
   desired_count                      = 1
   iam_role                           = "${aws_iam_role.mastodon_ecs.arn}"
+  name                               = "mastodon_puma"
 
   load_balancer {
     container_name   = "mastodon_puma"
@@ -11,7 +12,6 @@ resource "aws_ecs_service" "mastodon_puma" {
     target_group_arn = "${aws_alb_target_group.mastodon.arn}"
   }
 
-  name            = "mastodon_puma"
   task_definition = "${aws_ecs_task_definition.mastodon_puma.arn}"
 }
 
