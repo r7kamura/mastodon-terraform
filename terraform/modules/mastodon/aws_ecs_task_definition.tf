@@ -6,7 +6,7 @@ resource "aws_ecs_task_definition" "mastodon_db_migration" {
     {
       "command": ["bundle", "exec", "rake", "db:migrate"],
       "environment": ${data.template_file.mastodon_environment_variables_rails.rendered},
-      "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
       "memory": 490,
       "name": "mastodon_db_migration"
     }
@@ -22,7 +22,7 @@ resource "aws_ecs_task_definition" "mastodon_puma" {
     {
       "command": ["bundle", "exec", "puma", "--config", "config/puma.rb", "--environment", "production"],
       "environment": ${data.template_file.mastodon_environment_variables_rails.rendered},
-      "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
       "memory": 490,
       "name": "mastodon_puma",
       "portMappings": [
@@ -44,7 +44,7 @@ resource "aws_ecs_task_definition" "mastodon_sidekiq" {
     {
       "command": ["bundle", "exec", "sidekiq", "--queue", "default", "--queue", "mailers", "--queue", "--pull", "--queue", "push"],
       "environment": ${data.template_file.mastodon_environment_variables_rails.rendered},
-      "image": "${replace(aws_ecr_repository.mastodon_rails.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
       "memory": 490,
       "name": "mastodon_sidekiq"
     }
@@ -60,7 +60,7 @@ resource "aws_ecs_task_definition" "mastodon_streaming" {
     {
       "command": ["yarn", "run", "start"],
       "environment": ${data.template_file.mastodon_environment_variables_streaming.rendered},
-      "image": "${replace(aws_ecr_repository.mastodon_node.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
       "memory": 490,
       "name": "mastodon_streaming",
       "portMappings": [
