@@ -1,3 +1,5 @@
 /.env
 /mastodon
-/terraform/.terraform
+/terraform/.terraform.*
+/terraform/.terraform/
+/terraform/terraform.tfstate
