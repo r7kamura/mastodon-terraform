@@ -11,8 +11,8 @@ resource "aws_db_instance" "mastodon" {
   multi_az                   = false
   name                       = "mastodon_production"
   parameter_group_name       = "${aws_db_parameter_group.mastodon.name}"
-  password                   = "${var.mastodon_db_root_password}"
-  username                   = "${var.mastodon_db_root_username}"
+  password                   = "${var.mastodon_db_pass}"
+  username                   = "${var.mastodon_db_user}"
 
   vpc_security_group_ids = [
     "${aws_security_group.mastodon_db.id}",

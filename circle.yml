@@ -13,8 +13,8 @@ dependencies:
     - echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> .env
     - echo TF_VAR_aws_launch_configuration_ami_id=${TF_VAR_aws_launch_configuration_ami_id} >> .env
     - echo TF_VAR_aws_region=${TF_VAR_aws_region} >> .env
-    - echo TF_VAR_mastodon_db_root_password=${TF_VAR_mastodon_db_root_password} >> .env
-    - echo TF_VAR_mastodon_db_root_username=${TF_VAR_mastodon_db_root_username} >> .env
+    - echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_db_pass} >> .env
+    - echo TF_VAR_mastodon_db_user=${TF_VAR_mastodon_db_user} >> .env
     - echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env
     - echo TF_VAR_mastodon_secret_key_base=${TF_VAR_mastodon_secret_key_base} >> .env
     - >
