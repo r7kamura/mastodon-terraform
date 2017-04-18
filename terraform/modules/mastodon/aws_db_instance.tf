@@ -4,12 +4,12 @@ resource "aws_db_instance" "mastodon" {
   backup_retention_period    = 7
   backup_window              = "20:00-21:00"
   db_subnet_group_name       = "${aws_db_subnet_group.mastodon.name}"
-  engine                     = "mysql"
-  engine_version             = "5.6.27"
+  engine                     = "postgres"
+  engine_version             = "9.5.2"
   identifier                 = "mastodon"
   instance_class             = "db.t2.micro"
   multi_az                   = false
-  name                       = "mastodon_production"
+  name                       = "mastodon"
   parameter_group_name       = "${aws_db_parameter_group.mastodon.name}"
   password                   = "${var.mastodon_db_pass}"
   username                   = "${var.mastodon_db_user}"
