@@ -1,7 +1,6 @@
 resource "aws_security_group" "mastodon_alb" {
-  description = "mastodon_alb"
-  name        = "mastodon_alb"
-  vpc_id      = "${aws_vpc.mastodon.id}"
+  name   = "mastodon_alb"
+  vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {
     from_port   = 80
@@ -26,16 +25,8 @@ resource "aws_security_group" "mastodon_alb" {
 }
 
 resource "aws_security_group" "mastodon_web" {
-  description = "mastodon_web"
-  name        = "mastodon_web"
-  vpc_id      = "${aws_vpc.mastodon.id}"
-
-  ingress = {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+  name   = "mastodon_web"
+  vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {
     from_port = 0
@@ -56,9 +47,8 @@ resource "aws_security_group" "mastodon_web" {
 }
 
 resource "aws_security_group" "mastodon_db" {
-  description = "mastodon_db"
-  name        = "mastodon_db"
-  vpc_id      = "${aws_vpc.mastodon.id}"
+  name   = "mastodon_db"
+  vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {
     from_port = 5432
@@ -79,9 +69,8 @@ resource "aws_security_group" "mastodon_db" {
 }
 
 resource "aws_security_group" "mastodon_elasticache" {
-  description = "mastodon_elasticache"
-  name        = "mastodon_elasticache"
-  vpc_id      = "${aws_vpc.mastodon.id}"
+  name   = "mastodon_elasticache"
+  vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {
     from_port = 6379
