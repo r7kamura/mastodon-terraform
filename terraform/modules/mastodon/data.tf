@@ -168,7 +168,7 @@ data "template_file" "mastodon_environment_variables_rails" {
     {
       "name": "STREAMING_CLUSTER_NUM",
       "value": "$${mastodon_streaming_cluster_num}",
-    },
+    }
   ]
   JSON
 
