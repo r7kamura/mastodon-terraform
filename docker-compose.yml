@@ -1,0 +1,9 @@
+version: "2"
+services:
+  terraform:
+    env_file:
+      - .env
+    image: hashicorp/terraform:0.9.3
+    volumes:
+      - ./terraform:/app/terraform
+    working_dir: /app/terraform
