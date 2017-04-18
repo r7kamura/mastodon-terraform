@@ -3,171 +3,171 @@ data "template_file" "mastodon_environment_variables_rails" {
   [
     {
       "name": "AWS_ACCESS_KEY_ID",
-      "value": "$${mastodon_aws_access_key_id}",
+      "value": "$${mastodon_aws_access_key_id}"
     },
     {
       "name": "AWS_SECRET_ACCESS_KEY",
-      "value": "$${mastodon_aws_secret_access_key}",
+      "value": "$${mastodon_aws_secret_access_key}"
     },
     {
       "name": "DB_HOST",
-      "value": "$${mastodon_db_host}",
+      "value": "$${mastodon_db_host}"
     },
     {
       "name": "DB_NAME",
-      "value": "$${mastodon_db_name}",
+      "value": "$${mastodon_db_name}"
     },
     {
       "name": "DB_PASS",
-      "value": "$${mastodon_db_pass}",
+      "value": "$${mastodon_db_pass}"
     },
     {
       "name": "DB_PORT",
-      "value": "$${mastodon_db_port}",
+      "value": "$${mastodon_db_port}"
     },
     {
       "name": "DB_USER",
-      "value": "$${mastodon_db_user}",
+      "value": "$${mastodon_db_user}"
     },
     {
       "name": "DEFAULT_LOCALE",
-      "value": "$${mastodon_default_locale}",
+      "value": "$${mastodon_default_locale}"
     },
     {
       "name": "EMAIL_DOMAIN_BLACKLIST",
-      "value": "$${mastodon_email_domain_blacklist}",
+      "value": "$${mastodon_email_domain_blacklist}"
     },
     {
       "name": "EMAIL_DOMAIN_WHITELIST",
-      "value": "$${mastodon_email_domain_whitelist}",
+      "value": "$${mastodon_email_domain_whitelist}"
     },
     {
       "name": "LOCAL_DOMAIN",
-      "value": "$${mastodon_local_domain}",
+      "value": "$${mastodon_local_domain}"
     },
     {
       "name": "LOCAL_HTTPS",
-      "value": "$${mastodon_local_https}",
+      "value": "$${mastodon_local_https}"
     },
     {
       "name": "OTP_SECRET",
-      "value": "$${mastodon_otp_secret}",
+      "value": "$${mastodon_otp_secret}"
     },
     {
       "name": "PAPERCLIP_ROOT_PATH",
-      "value": "$${mastodon_paperclip_root_path}",
+      "value": "$${mastodon_paperclip_root_path}"
     },
     {
       "name": "PAPERCLIP_ROOT_URL",
-      "value": "$${mastodon_paperclip_root_url}",
+      "value": "$${mastodon_paperclip_root_url}"
     },
     {
       "name": "PAPERCLIP_SECRET",
-      "value": "$${mastodon_paperclip_secret}",
+      "value": "$${mastodon_paperclip_secret}"
     },
     {
       "name": "PREPARED_STATEMENTS",
-      "value": "$${mastodon_prepared_statements}",
+      "value": "$${mastodon_prepared_statements}"
     },
     {
       "name": "REDIS_HOST",
-      "value": "$${mastodon_redis_host}",
+      "value": "$${mastodon_redis_host}"
     },
     {
       "name": "REDIS_PASSWORD",
-      "value": "$${mastodon_redis_password}",
+      "value": "$${mastodon_redis_password}"
     },
     {
       "name": "REDIS_PORT",
-      "value": "$${mastodon_redis_port}",
+      "value": "$${mastodon_redis_port}"
     },
     {
       "name": "S3_BUCKET",
-      "value": "$${mastodon_s3_bucket}",
+      "value": "$${mastodon_s3_bucket}"
     },
     {
       "name": "S3_CLOUDFRONT_HOST",
-      "value": "$${mastodon_s3_cloudfront_host}",
+      "value": "$${mastodon_s3_cloudfront_host}"
     },
     {
       "name": "S3_ENABLED",
-      "value": "$${mastodon_s3_enabled}",
+      "value": "$${mastodon_s3_enabled}"
     },
     {
       "name": "S3_ENDPOINT",
-      "value": "$${mastodon_s3_endpoint}",
+      "value": "$${mastodon_s3_endpoint}"
     },
     {
       "name": "S3_HOSTNAME",
-      "value": "$${mastodon_s3_hostname}",
+      "value": "$${mastodon_s3_hostname}"
     },
     {
       "name": "S3_HOSTNAME",
-      "value": "$${mastodon_s3_hostname}",
+      "value": "$${mastodon_s3_hostname}"
     },
     {
       "name": "S3_PROTOCOL",
-      "value": "$${mastodon_s3_protocol}",
+      "value": "$${mastodon_s3_protocol}"
     },
     {
       "name": "S3_REGION",
-      "value": "$${mastodon_s3_region}",
+      "value": "$${mastodon_s3_region}"
     },
     {
       "name": "SECRET_KEY_BASE",
-      "value": "$${mastodon_secret_key_base}",
+      "value": "$${mastodon_secret_key_base}"
     },
     {
       "name": "SINGLE_USER_MODE",
-      "value": "$${mastodon_single_user_mode}",
+      "value": "$${mastodon_single_user_mode}"
     },
     {
       "name": "SMTP_AUTH_METHOD",
-      "value": "$${mastodon_smtp_auth_method}",
+      "value": "$${mastodon_smtp_auth_method}"
     },
     {
       "name": "SMTP_DELIVERY_METHOD",
-      "value": "$${mastodon_smtp_delivery_method}",
+      "value": "$${mastodon_smtp_delivery_method}"
     },
     {
       "name": "SMTP_DOMAIN",
-      "value": "$${mastodon_smtp_domain}",
+      "value": "$${mastodon_smtp_domain}"
     },
     {
       "name": "SMTP_ENABLE_STARTTLS_AUTO",
-      "value": "$${mastodon_smtp_enable_starttls_auto}",
+      "value": "$${mastodon_smtp_enable_starttls_auto}"
     },
     {
       "name": "SMTP_FROM_ADDRESS",
-      "value": "$${mastodon_smtp_from_address}",
+      "value": "$${mastodon_smtp_from_address}"
     },
     {
       "name": "SMTP_LOGIN",
-      "value": "$${mastodon_smtp_login}",
+      "value": "$${mastodon_smtp_login}"
     },
     {
       "name": "SMTP_OPENSSL_VERIFY_MODE",
-      "value": "$${mastodon_smtp_openssl_verify_mode}",
+      "value": "$${mastodon_smtp_openssl_verify_mode}"
     },
     {
       "name": "SMTP_PASSWORD",
-      "value": "$${mastodon_smtp_password}",
+      "value": "$${mastodon_smtp_password}"
     },
     {
       "name": "SMTP_PORT",
-      "value": "$${mastodon_smtp_port}",
+      "value": "$${mastodon_smtp_port}"
     },
     {
       "name": "SMTP_SERVER",
-      "value": "$${mastodon_smtp_server}",
+      "value": "$${mastodon_smtp_server}"
     },
     {
       "name": "STREAMING_API_BASE_URL",
-      "value": "$${mastodon_streaming_api_base_url}",
+      "value": "$${mastodon_streaming_api_base_url}"
     },
     {
       "name": "STREAMING_CLUSTER_NUM",
-      "value": "$${mastodon_streaming_cluster_num}",
+      "value": "$${mastodon_streaming_cluster_num}"
     }
   ]
   JSON
@@ -223,47 +223,47 @@ data "template_file" "mastodon_environment_variables_streaming" {
   [
     {
       "name": "DB_HOST",
-      "value": "$${mastodon_db_host}",
+      "value": "$${mastodon_db_host}"
     },
     {
       "name": "DB_NAME",
-      "value": "$${mastodon_db_name}",
+      "value": "$${mastodon_db_name}"
     },
     {
       "name": "DB_PASS",
-      "value": "$${mastodon_db_pass}",
+      "value": "$${mastodon_db_pass}"
     },
     {
       "name": "DB_PORT",
-      "value": "$${mastodon_db_port}",
+      "value": "$${mastodon_db_port}"
     },
     {
       "name": "DB_USER",
-      "value": "$${mastodon_db_user}",
+      "value": "$${mastodon_db_user}"
     },
     {
       "name": "LOG_LEVEL",
-      "value": "$${mastodon_streaming_log_level}",
+      "value": "$${mastodon_streaming_log_level}"
     },
     {
       "name": "NODE_ENV",
-      "value": "$${mastodon_node_env}",
+      "value": "$${mastodon_node_env}"
     },
     {
       "name": "PORT",
-      "value": "$${mastodon_streaming_port}",
+      "value": "$${mastodon_streaming_port}"
     },
     {
       "name": "REDIS_HOST",
-      "value": "$${mastodon_redis_host}",
+      "value": "$${mastodon_redis_host}"
     },
     {
       "name": "REDIS_PASSWORD",
-      "value": "$${mastodon_redis_password}",
+      "value": "$${mastodon_redis_password}"
     },
     {
       "name": "REDIS_PORT",
-      "value": "$${mastodon_redis_port}",
+      "value": "$${mastodon_redis_port}"
     }
   ]
   JSON
