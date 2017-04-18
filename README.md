@@ -50,11 +50,11 @@ The mastodon module in this repository will create the following resources:
 - module.mastodon.aws_alb_target_group.mastodon
 - module.mastodon.aws_alb.mastodon
 - module.mastodon.aws_autoscaling_group.mastodon
+- module.mastodon.aws_cloudwatch_log_group.mastodon
 - module.mastodon.aws_db_instance.mastodon
 - module.mastodon.aws_db_parameter_group.mastodon
 - module.mastodon.aws_db_subnet_group.mastodon
-- module.mastodon.aws_ecr_repository.mastodon_node
-- module.mastodon.aws_ecr_repository.mastodon_rails
+- module.mastodon.aws_ecr_repository.mastodon
 - module.mastodon.aws_ecs_cluster.mastodon
 - module.mastodon.aws_ecs_service.mastodon_puma
 - module.mastodon.aws_ecs_service.mastodon_sidekiq
