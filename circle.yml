@@ -64,13 +64,6 @@ deployment:
     branch: master
     commands:
       - docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${TERRAFORM_DOCKER_IMAGE_NAME} apply
-      - git clone https://github.com/tootsuite/mastodon.git
-      - docker build --tag mastodon mastodon
-      - docker run --env SECRET_KEY_BASE=dummy --volume $(pwd)/mastodon/public/assets:/mastodon/public/assets mastodon bundle exec rake assets:precompile
-      - rm mastodon/.dockerignore
-      - docker build --tag ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${CIRCLE_BUILD_NUM} mastodon
-      - eval $(aws ecr get-login --region ${AWS_REGION})
-      - docker push ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${CIRCLE_BUILD_NUM}
 test:
   override:
     - docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${TERRAFORM_DOCKER_IMAGE_NAME} plan
