@@ -35,9 +35,9 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 | | Sidekiq |     EC2    |
 | └---------┘            |
 └------------------------┘
-▲               ▲
-|               |
-▼               ▼
+▲                  ▲
+|                  |
+▼                  ▼
 ┌----------------┐ ┌-------------┐
 | ┌------------┐ | |  ┌-------┐  |
 | | PostgreSQL | | |  | Redis |  |
