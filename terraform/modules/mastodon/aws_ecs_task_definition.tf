@@ -11,7 +11,7 @@ resource "aws_ecs_task_definition" "mastodon_node_streaming" {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "mastodon",
-          "awslogs-region": "${var.aws_region}",
+          "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "streaming"
         }
       },
@@ -41,7 +41,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_migration" {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "mastodon",
-          "awslogs-region": "${var.aws_region}",
+          "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_db_migration"
         }
       },
@@ -65,7 +65,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_set_up" {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "mastodon",
-          "awslogs-region": "${var.aws_region}",
+          "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_db_set_up"
         }
       },
@@ -89,7 +89,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_puma" {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "mastodon",
-          "awslogs-region": "${var.aws_region}",
+          "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_puma"
         }
       },
@@ -119,7 +119,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_sidekiq" {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "mastodon",
-          "awslogs-region": "${var.aws_region}",
+          "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_sidekiq"
         }
       },

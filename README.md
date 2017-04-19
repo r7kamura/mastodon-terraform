@@ -16,9 +16,9 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 ### Required
 
 - `AWS_ACCESS_KEY_ID`
+- `AWS_DEFAULT_REGION`
 - `AWS_SECRET_ACCESS_KEY`
 - `TF_VAR_aws_launch_configuration_ami_id`
-- `TF_VAR_aws_region`
 - `TF_VAR_mastodon_db_pass`
 - `TF_VAR_mastodon_docker_image_tag`
 - `TF_VAR_mastodon_otp_secret`

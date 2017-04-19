@@ -11,9 +11,9 @@ dependencies:
     - docker pull ${TERRAFORM_DOCKER_IMAGE_NAME}
     - >
       if [ -z ${AWS_ACCESS_KEY_ID+x} ]; then echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> .env; fi
+      if [ -z ${AWS_DEFAULT_REGION+x} ]; then echo AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} >> .env; fi
       if [ -z ${AWS_SECRET_ACCESS_KEY+x} ]; then echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> .env; fi
       if [ -z ${TF_VAR_aws_launch_configuration_ami_id+x} ]; then echo TF_VAR_aws_launch_configuration_ami_id=${TF_VAR_aws_launch_configuration_ami_id} >> .env; fi
-      if [ -z ${TF_VAR_aws_region+x} ]; then echo TF_VAR_aws_region=${TF_VAR_aws_region} >> .env; fi
       if [ -z ${TF_VAR_mastodon_db_pass+x} ]; then echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_db_pass} >> .env; fi
       if [ -z ${TF_VAR_mastodon_docker_image_tag+x} ]; then echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env; fi
       if [ -z ${TF_VAR_mastodon_otp_secret+x} ]; then echo TF_VAR_mastodon_otp_secret=${TF_VAR_mastodon_otp_secret} >> .env; fi
