@@ -1,5 +1,3 @@
-variable "aws_launch_configuration_ami_id" {}
-
 variable "mastodon_aws_access_key_id" {}
 
 variable "mastodon_aws_secret_access_key" {}

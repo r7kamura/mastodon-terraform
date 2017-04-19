@@ -1,5 +1,4 @@
 module "mastodon" {
-  aws_launch_configuration_ami_id      = "${var.aws_launch_configuration_ami_id}"
   mastodon_aws_access_key_id           = "${var.mastodon_aws_access_key_id}"
   mastodon_aws_secret_access_key       = "${var.mastodon_aws_secret_access_key}"
   mastodon_db_name                     = "${var.mastodon_db_name}"

@@ -1,4 +1,18 @@
-variable "aws_launch_configuration_ami_id" {}
+variable "aws_ecs_optimized_ami_ids" {
+  default = {
+    "ap-northeast-1" = "ami-f63f6f91"
+    "ap-southeast-1" = "ami-b4ae1dd7"
+    "ap-southeast-2" = "ami-fbe9eb98"
+    "ca-central-1"   = "ami-ee58e58a"
+    "eu-central-1"   = "ami-085e8a67"
+    "eu-west-1"      = "ami-95f8d2f3"
+    "eu-west-2"      = "ami-bf9481db"
+    "us-east-1"      = "ami-275ffe31"
+    "us-east-2"      = "ami-62745007"
+    "us-west-1"      = "ami-689bc208"
+    "us-west-2"      = "ami-62d35c02"
+  }
+}
 
 variable "mastodon_aws_access_key_id" {}
 
