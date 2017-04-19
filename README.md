@@ -1,13 +1,13 @@
 # mastodon-terraform
 
-Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS using [Terraform](https://github.com/hashicorp/terraform) via [CircleCI](http://circleci.com/).
+Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS using [Terraform](https://github.com/hashicorp/terraform) and [CircleCI](http://circleci.com/).
 
 ## Usage
 
 1. Fork this repository
 1. Enable CircleCI integration
 1. Set environment variables on CircleCI
-1. Build CircleCI to create resources on AWS
+1. Run CircleCI job to create resources on AWS
 1. Build and push mastodon docker image via [mastodon-docker](https://github.com/r7kamura/mastodon-docker)
 1. Run `rails db:setup` by running custom ECS task on AWS console
 
