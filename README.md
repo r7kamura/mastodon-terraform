@@ -33,9 +33,9 @@ Database password.
 
 ### TF_VAR_mastodon_docker_image_tag
 
-Mastodon Docker image tag to detect which Docker image to be deployed on ECS.
-If you are using [mastodon-docker](https://github.com/r7kamura/mastodon-docker) to build Mastodon Docker image and push it to ECR,
-each CircleCI build number will be the Docker image tag.
+Mastodon Docker image tag to detect which image to be deployed on ECS.
+If you are using [mastodon-docker](https://github.com/r7kamura/mastodon-docker) to build and push it to ECR,
+the CircleCI build number will be the Docker image tag.
 
 e.g. `123`
 

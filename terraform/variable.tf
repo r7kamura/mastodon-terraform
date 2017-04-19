@@ -1,6 +1,10 @@
-variable "mastodon_aws_access_key_id" {}
+variable "mastodon_aws_access_key_id" {
+  default = ""
+}
 
-variable "mastodon_aws_secret_access_key" {}
+variable "mastodon_aws_secret_access_key" {
+  default = ""
+}
 
 variable "mastodon_db_name" {
   default = "mastodon"
@@ -16,7 +20,9 @@ variable "mastodon_default_locale" {
   default = "en"
 }
 
-variable "mastodon_docker_image_tag" {}
+variable "mastodon_docker_image_tag" {
+  default = "dummy"
+}
 
 variable "mastodon_email_domain_blacklist" {
   default = ""
@@ -48,27 +54,41 @@ variable "mastodon_paperclip_root_url" {
   default = "/system"
 }
 
-variable "mastodon_paperclip_secret" {}
+variable "mastodon_paperclip_secret" {
+  default = ""
+}
 
 variable "mastodon_prepared_statements" {
   default = "true"
 }
 
-variable "mastodon_s3_bucket" {}
+variable "mastodon_s3_bucket" {
+  default = ""
+}
 
-variable "mastodon_s3_cloudfront_host" {}
+variable "mastodon_s3_cloudfront_host" {
+  default = ""
+}
 
 variable "mastodon_s3_enabled" {
   default = "false"
 }
 
-variable "mastodon_s3_endpoint" {}
+variable "mastodon_s3_endpoint" {
+  default = ""
+}
 
-variable "mastodon_s3_hostname" {}
+variable "mastodon_s3_hostname" {
+  default = ""
+}
 
-variable "mastodon_s3_protocol" {}
+variable "mastodon_s3_protocol" {
+  default = ""
+}
 
-variable "mastodon_s3_region" {}
+variable "mastodon_s3_region" {
+  default = ""
+}
 
 variable "mastodon_secret_key_base" {}
 
