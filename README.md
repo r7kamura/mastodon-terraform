@@ -18,7 +18,7 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 |               |
 (HTTP)          |
 |               |
-▼　　　　　　　　　▼
+▼               ▼
 ┌---------------┐
 |      ALB      |
 └---------------┘
@@ -26,7 +26,7 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 |               |
 (HTTP)          (WebSocket)
 |               |
-▼　　　　　　　　　▼
+▼               ▼
 ┌------------------------┐
 | ┌-Docker-┐ ┌-Docker--┐ |
 | |  Puma  | | Express | |
@@ -37,7 +37,7 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 └------------------------┘
 ▲               ▲
 |               |
-▼　　　　　　　　　▼
+▼               ▼
 ┌----------------┐ ┌-------------┐
 | ┌------------┐ | |  ┌-------┐  |
 | | PostgreSQL | | |  | Redis |  |
