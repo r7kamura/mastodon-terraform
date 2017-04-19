@@ -9,14 +9,50 @@ database:
 dependencies:
   override:
     - docker pull ${TERRAFORM_DOCKER_IMAGE_NAME}
-    - echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> .env
-    - echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> .env
-    - echo TF_VAR_aws_launch_configuration_ami_id=${TF_VAR_aws_launch_configuration_ami_id} >> .env
-    - echo TF_VAR_aws_region=${TF_VAR_aws_region} >> .env
-    - echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_db_pass} >> .env
-    - echo TF_VAR_mastodon_db_user=${TF_VAR_mastodon_db_user} >> .env
-    - echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env
-    - echo TF_VAR_mastodon_secret_key_base=${TF_VAR_mastodon_secret_key_base} >> .env
+    - if [ -z ${AWS_ACCESS_KEY_ID+x} ]; then echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> .env; fi
+    - if [ -z ${AWS_SECRET_ACCESS_KEY+x} ]; then echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> .env; fi
+    - if [ -z ${TF_VAR_aws_launch_configuration_ami_id+x} ]; then echo TF_VAR_aws_launch_configuration_ami_id=${TF_VAR_aws_launch_configuration_ami_id} >> .env; fi
+    - if [ -z ${TF_VAR_aws_region+x} ]; then echo TF_VAR_aws_region=${TF_VAR_aws_region} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_db_pass+x} ]; then echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_db_pass} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_docker_image_tag+x} ]; then echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_otp_secret+x} ]; then echo TF_VAR_mastodon_otp_secret=${TF_VAR_mastodon_otp_secret} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_secret_key_base+x} ]; then echo TF_VAR_mastodon_secret_key_base=${TF_VAR_mastodon_secret_key_base} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_aws_access_key_id+x} ]; then echo TF_VAR_mastodon_aws_access_key_id=${TF_VAR_mastodon_aws_access_key_id} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_aws_secret_access_key+x} ]; then echo TF_VAR_mastodon_aws_secret_access_key=${TF_VAR_mastodon_aws_secret_access_key} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_db_name+x} ]; then echo TF_VAR_mastodon_db_name=${TF_VAR_mastodon_db_name} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_db_user+x} ]; then echo TF_VAR_mastodon_db_user=${TF_VAR_mastodon_db_user} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_default_locale+x} ]; then echo TF_VAR_mastodon_default_locale=${TF_VAR_mastodon_default_locale} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_email_domain_blacklist+x} ]; then echo TF_VAR_mastodon_email_domain_blacklist=${TF_VAR_mastodon_email_domain_blacklist} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_email_domain_whitelist+x} ]; then echo TF_VAR_mastodon_email_domain_whitelist=${TF_VAR_mastodon_email_domain_whitelist} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_local_domain+x} ]; then echo TF_VAR_mastodon_local_domain=${TF_VAR_mastodon_local_domain} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_local_https+x} ]; then echo TF_VAR_mastodon_local_https=${TF_VAR_mastodon_local_https} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_node_env+x} ]; then echo TF_VAR_mastodon_node_env=${TF_VAR_mastodon_node_env} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_node_streaming_api_base_url+x} ]; then echo TF_VAR_mastodon_node_streaming_api_base_url=${TF_VAR_mastodon_node_streaming_api_base_url} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_node_streaming_cluster_num+x} ]; then echo TF_VAR_mastodon_node_streaming_cluster_num=${TF_VAR_mastodon_node_streaming_cluster_num} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_node_streaming_log_level+x} ]; then echo TF_VAR_mastodon_node_streaming_log_level=${TF_VAR_mastodon_node_streaming_log_level} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_node_streaming_port+x} ]; then echo TF_VAR_mastodon_node_streaming_port=${TF_VAR_mastodon_node_streaming_port} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_paperclip_root_path+x} ]; then echo TF_VAR_mastodon_paperclip_root_path=${TF_VAR_mastodon_paperclip_root_path} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_paperclip_root_url+x} ]; then echo TF_VAR_mastodon_paperclip_root_url=${TF_VAR_mastodon_paperclip_root_url} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_paperclip_secret+x} ]; then echo TF_VAR_mastodon_paperclip_secret=${TF_VAR_mastodon_paperclip_secret} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_prepared_statements+x} ]; then echo TF_VAR_mastodon_prepared_statements=${TF_VAR_mastodon_prepared_statements} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_s3_bucket+x} ]; then echo TF_VAR_mastodon_s3_bucket=${TF_VAR_mastodon_s3_bucket} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_s3_cloudfront_host+x} ]; then echo TF_VAR_mastodon_s3_cloudfront_host=${TF_VAR_mastodon_s3_cloudfront_host} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_s3_enabled+x} ]; then echo TF_VAR_mastodon_s3_enabled=${TF_VAR_mastodon_s3_enabled} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_s3_endpoint+x} ]; then echo TF_VAR_mastodon_s3_endpoint=${TF_VAR_mastodon_s3_endpoint} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_s3_hostname+x} ]; then echo TF_VAR_mastodon_s3_hostname=${TF_VAR_mastodon_s3_hostname} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_s3_protocol+x} ]; then echo TF_VAR_mastodon_s3_protocol=${TF_VAR_mastodon_s3_protocol} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_s3_region+x} ]; then echo TF_VAR_mastodon_s3_region=${TF_VAR_mastodon_s3_region} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_single_user_mode+x} ]; then echo TF_VAR_mastodon_single_user_mode=${TF_VAR_mastodon_single_user_mode} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_auth_method+x} ]; then echo TF_VAR_mastodon_smtp_auth_method=${TF_VAR_mastodon_smtp_auth_method} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_delivery_method+x} ]; then echo TF_VAR_mastodon_smtp_delivery_method=${TF_VAR_mastodon_smtp_delivery_method} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_domain+x} ]; then echo TF_VAR_mastodon_smtp_domain=${TF_VAR_mastodon_smtp_domain} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_enable_starttls_auto+x} ]; then echo TF_VAR_mastodon_smtp_enable_starttls_auto=${TF_VAR_mastodon_smtp_enable_starttls_auto} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_from_address+x} ]; then echo TF_VAR_mastodon_smtp_from_address=${TF_VAR_mastodon_smtp_from_address} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_login+x} ]; then echo TF_VAR_mastodon_smtp_login=${TF_VAR_mastodon_smtp_login} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_openssl_verify_mode+x} ]; then echo TF_VAR_mastodon_smtp_openssl_verify_mode=${TF_VAR_mastodon_smtp_openssl_verify_mode} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_password+x} ]; then echo TF_VAR_mastodon_smtp_password=${TF_VAR_mastodon_smtp_password} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_port+x} ]; then echo TF_VAR_mastodon_smtp_port=${TF_VAR_mastodon_smtp_port} >> .env; fi
+    - if [ -z ${TF_VAR_mastodon_smtp_server+x} ]; then echo TF_VAR_mastodon_smtp_server=${TF_VAR_mastodon_smtp_server} >> .env; fi
     - >
       docker run --env-file .env --volume $(pwd)/terraform:/app/terraform --workdir /app/terraform ${TERRAFORM_DOCKER_IMAGE_NAME} init \
         -backend=true \
