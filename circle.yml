@@ -58,7 +58,7 @@ dependencies:
         -backend=true \
         -backend-config="bucket=${AWS_S3_BUCKET_TERRAFORM_STATE_NAME}" \
         -backend-config="key=${AWS_S3_BUCKET_TERRAFORM_STATE_KEY}" \
-        -backend-config="region=${AWS_S3_BUCKET_TERRAFORM_STATE_REGION}"
+        -backend-config="region=${AWS_DEFAULT_REGION}"
 deployment:
   master:
     branch: master
