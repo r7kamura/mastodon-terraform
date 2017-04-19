@@ -1,4 +1,5 @@
 module "mastodon" {
+  aws_acm_certificate_arn              = "${var.aws_acm_certificate_arn}"
   mastodon_aws_access_key_id           = "${var.mastodon_aws_access_key_id}"
   mastodon_aws_secret_access_key       = "${var.mastodon_aws_secret_access_key}"
   mastodon_db_name                     = "${var.mastodon_db_name}"

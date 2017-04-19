@@ -1,3 +1,7 @@
+variable "aws_acm_certificate_arn" {
+  default = ""
+}
+
 variable "mastodon_aws_access_key_id" {
   default = ""
 }

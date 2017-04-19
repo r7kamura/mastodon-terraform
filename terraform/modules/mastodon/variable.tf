@@ -1,3 +1,5 @@
+variable "aws_acm_certificate_arn" {}
+
 variable "aws_ecs_optimized_ami_ids" {
   default = {
     "ap-northeast-1" = "ami-f63f6f91"
