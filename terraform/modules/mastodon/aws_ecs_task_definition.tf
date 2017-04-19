@@ -15,7 +15,7 @@ resource "aws_ecs_task_definition" "mastodon_node_streaming" {
           "awslogs-stream-prefix": "streaming"
         }
       },
-      "memory": 300,
+      "memory": ${var.aws_ecs_task_definition_mastodon_node_streaming_memory},
       "name": "mastodon_node_streaming",
       "portMappings": [
         {
@@ -45,7 +45,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_migration" {
           "awslogs-stream-prefix": "rails_db_migration"
         }
       },
-      "memory": 300,
+      "memory": ${var.aws_ecs_task_definition_mastodon_rails_db_migration_memory},
       "name": "mastodon_rails_db_migration"
     }
   ]
@@ -69,7 +69,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_set_up" {
           "awslogs-stream-prefix": "rails_db_set_up"
         }
       },
-      "memory": 300,
+      "memory": ${var.aws_ecs_task_definition_mastodon_rails_db_set_up_memory},
       "name": "mastodon_rails_db_set_up"
     }
   ]
@@ -93,7 +93,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_puma" {
           "awslogs-stream-prefix": "rails_puma"
         }
       },
-      "memory": 300,
+      "memory": ${var.aws_ecs_task_definition_mastodon_rails_puma_memory},
       "name": "mastodon_rails_puma",
       "portMappings": [
         {
@@ -123,7 +123,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_sidekiq" {
           "awslogs-stream-prefix": "rails_sidekiq"
         }
       },
-      "memory": 300,
+      "memory": ${var.aws_ecs_task_definition_mastodon_rails_sidekiq_memory},
       "name": "mastodon_rails_sidekiq"
     }
   ]

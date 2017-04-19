@@ -73,6 +73,11 @@ ruby -r securerandom -e "puts SecureRandom.hex(64)"
 
 ## Optional environment variables
 
+- `TF_VAR_aws_ecs_task_definition_mastodon_node_streaming_memory`
+- `TF_VAR_aws_ecs_task_definition_mastodon_rails_db_migration_memory`
+- `TF_VAR_aws_ecs_task_definition_mastodon_rails_db_set_up_memory`
+- `TF_VAR_aws_ecs_task_definition_mastodon_rails_puma_memory`
+- `TF_VAR_aws_ecs_task_definition_mastodon_rails_sidekiq_memory`
 - `TF_VAR_mastodon_aws_access_key_id`
 - `TF_VAR_mastodon_aws_secret_access_key`
 - `TF_VAR_mastodon_db_name`

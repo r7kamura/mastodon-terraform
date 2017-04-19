@@ -2,6 +2,26 @@ variable "aws_acm_certificate_arn" {
   default = ""
 }
 
+variable "aws_ecs_task_definition_mastodon_node_streaming_memory" {
+  default = "300"
+}
+
+variable "aws_ecs_task_definition_mastodon_rails_db_migration_memory" {
+  default = "300"
+}
+
+variable "aws_ecs_task_definition_mastodon_rails_db_set_up_memory" {
+  default = "300"
+}
+
+variable "aws_ecs_task_definition_mastodon_rails_puma_memory" {
+  default = "300"
+}
+
+variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {
+  default = "300"
+}
+
 variable "mastodon_aws_access_key_id" {
   default = ""
 }

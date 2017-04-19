@@ -16,6 +16,16 @@ variable "aws_ecs_optimized_ami_ids" {
   }
 }
 
+variable "aws_ecs_task_definition_mastodon_node_streaming_memory" {}
+
+variable "aws_ecs_task_definition_mastodon_rails_db_migration_memory" {}
+
+variable "aws_ecs_task_definition_mastodon_rails_db_set_up_memory" {}
+
+variable "aws_ecs_task_definition_mastodon_rails_puma_memory" {}
+
+variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {}
+
 variable "mastodon_aws_access_key_id" {}
 
 variable "mastodon_aws_secret_access_key" {}
