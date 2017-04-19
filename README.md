@@ -118,6 +118,7 @@ This boilerplate will create the following resources:
 - module.mastodon.aws_alb_target_group.mastodon
 - module.mastodon.aws_alb.mastodon
 - module.mastodon.aws_autoscaling_group.mastodon
+- module.mastodon.aws_cloudfront_distribution.mastodon
 - module.mastodon.aws_cloudwatch_log_group.mastodon
 - module.mastodon.aws_db_instance.mastodon
 - module.mastodon.aws_db_parameter_group.mastodon
