@@ -2,6 +2,50 @@
 
 Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS using [Terraform](https://github.com/hashicorp/terraform) and [CircleCI](http://circleci.com/).
 
+```
+┌---------------┐
+|  Web Browser  |
+└---------------┘
+▲               ▲
+|               |
+(HTTPS)         (WebSocket)
+|               |
+▼               |
+┌------------┐  |
+| CloudFront |  |
+└------------┘  |
+▲               |
+|               |
+(HTTP)          |
+|               |
+▼　　　　　　　　　▼
+┌---------------┐
+|      ALB      |
+└---------------┘
+▲               ▲
+|               |
+(HTTP)          (WebSocket)
+|               |
+▼　　　　　　　　　▼
+┌------------------------┐
+| ┌-Docker-┐ ┌-Docker--┐ |
+| |  Puma  | | Express | |
+| └--------┘ └---------┘ |
+| ┌-Docker--┐            |
+| | Sidekiq |     EC2    |
+| └---------┘            |
+└------------------------┘
+▲               ▲
+|               |
+▼　　　　　　　　　▼
+┌----------------┐ ┌-------------┐
+| ┌------------┐ | |  ┌-------┐  |
+| | PostgreSQL | | |  | Redis |  |
+| └------------┘ | |  └-------┘  |
+|       RDS      | | Elasticache |
+└----------------┘ └-------------┘
+```
+
 ## Usage
 
 1. Fork this repository
