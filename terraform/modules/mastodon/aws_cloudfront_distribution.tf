@@ -2,11 +2,6 @@ resource "aws_cloudfront_distribution" "mastodon" {
   comment = "mastodon"
   enabled = true
 
-  aliases = [
-    "${var.mastodon_local_domain}",
-    "*.${var.mastodon_local_domain}"
-  ]
-
   cache_behavior {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
