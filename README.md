@@ -153,6 +153,6 @@ This boilerplate will create the following resources:
 - module.mastodon.aws_subnet.mastodon_public_c
 - module.mastodon.aws_vpc.mastodon
 
-## Contributions
+## Contributing
 
 Pull Requests are welcome if you found bugs or features you think are missing.
