@@ -1,6 +1,6 @@
 machine:
   environment:
-    TERRAFORM_DOCKER_IMAGE_NAME: hashicorp/terraform:0.9.1
+    TERRAFORM_DOCKER_IMAGE_NAME: hashicorp/terraform:0.9.3
   services:
     - docker
 database:
