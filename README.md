@@ -11,20 +11,53 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 1. Build and push mastodon docker image via [mastodon-docker](https://github.com/r7kamura/mastodon-docker)
 1. Run `rails db:setup` by running custom ECS task on AWS console
 
-## Environment variables
+## Required environment variables
 
-### Required
+### AWS_ACCESS_KEY_ID
 
-- `AWS_ACCESS_KEY_ID`
-- `AWS_DEFAULT_REGION`
-- `AWS_SECRET_ACCESS_KEY`
-- `TF_VAR_aws_launch_configuration_ami_id`
-- `TF_VAR_mastodon_db_pass`
-- `TF_VAR_mastodon_docker_image_tag`
-- `TF_VAR_mastodon_otp_secret`
-- `TF_VAR_mastodon_secret_key_base`
+AWS Credentials for Terraform.
 
-### Optional
+### AWS_DEFAULT_REGION
+
+AWS region that the resources will be located in.
+
+e.g. `ap-northeast-1`
+
+### AWS_SECRET_ACCESS_KEY
+
+AWS Credentials for Terraform.
+
+### TF_VAR_mastodon_db_pass
+
+Database password.
+
+### TF_VAR_mastodon_docker_image_tag
+
+Mastodon Docker image tag to detect which Docker image to be deployed on ECS.
+If you are using [mastodon-docker](https://github.com/r7kamura/mastodon-docker) to build Mastodon Docker image and push it to ECR,
+each CircleCI build number will be the Docker image tag.
+
+e.g. `123`
+
+Note: this variable is not required at the 1st time because we need to create ECR repository before building Mastodon Docker image.
+
+### TF_VAR_mastodon_otp_secret
+
+One-time password secret. Generate a long random value like this:
+
+```bash
+ruby -r securerandom -e "puts SecureRandom.hex(64)"
+```
+
+### TF_VAR_mastodon_secret_key_base
+
+The secret key base. Generate a long random value like this:
+
+```bash
+ruby -r securerandom -e "puts SecureRandom.hex(64)"
+```
+
+## Optional environment variables
 
 - `TF_VAR_mastodon_aws_access_key_id`
 - `TF_VAR_mastodon_aws_secret_access_key`
