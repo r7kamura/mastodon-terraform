@@ -15,7 +15,9 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 
 ### AWS_ACCESS_KEY_ID
 
-AWS Credentials for Terraform.
+AWS IAM User access key ID for Terraform.
+
+e.g. `ABCDEFGHIJKLMNOPQRST`
 
 ### AWS_DEFAULT_REGION
 
@@ -25,11 +27,19 @@ e.g. `ap-northeast-1`
 
 ### AWS_SECRET_ACCESS_KEY
 
-AWS Credentials for Terraform.
+AWS IAM User secret access key for Terraform.
+
+e.g. `abcdefghijklmnopqrstuvwxyz0123456789/+AB`
 
 ### TF_VAR_mastodon_db_pass
 
 Database password.
+
+e.g. Generate a long random value like this:
+
+```bash
+ruby -r securerandom -e "puts SecureRandom.hex(64)"
+```
 
 ### TF_VAR_mastodon_docker_image_tag
 
@@ -43,7 +53,9 @@ Note: this variable is not required at the 1st time because we need to create EC
 
 ### TF_VAR_mastodon_otp_secret
 
-One-time password secret. Generate a long random value like this:
+One-time password secret
+
+e.g. Generate a long random value like this:
 
 ```bash
 ruby -r securerandom -e "puts SecureRandom.hex(64)"
@@ -51,7 +63,9 @@ ruby -r securerandom -e "puts SecureRandom.hex(64)"
 
 ### TF_VAR_mastodon_secret_key_base
 
-The secret key base. Generate a long random value like this:
+The secret key base.
+
+e.g. Generate a long random value like this:
 
 ```bash
 ruby -r securerandom -e "puts SecureRandom.hex(64)"
