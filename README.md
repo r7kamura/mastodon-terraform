@@ -156,3 +156,5 @@ This boilerplate will create the following resources:
 ## Contributions
 
 Pull Requests are welcome if you found bugs or features you think are missing.
+
+![mastodon](/images/mastodon.png)
