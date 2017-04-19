@@ -1,66 +1,66 @@
 # mastodon-terraform
 
-Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS using [Terraform](https://github.com/hashicorp/terraform).
-
-## Requirements
-
-- [Docker](https://www.docker.com/) 1.13 or later version
-- AWS S3 bucket (to store terraform state)
-- [aws-cli](https://github.com/aws/aws-cli)
+Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS using [Terraform](https://github.com/hashicorp/terraform) via [CircleCI](http://circleci.com/).
 
 ## Usage
 
-### 1. Pull terraform docker image
+1. Fork this repository
+1. Enable CircleCI integration
+1. Set environment variables on CircleCI
+1. Build CircleCI to create resources on AWS
+1. Build and push mastodon docker image via [mastodon-docker](https://github.com/r7kamura/mastodon-docker)
+1. Run `rails db:setup` by running custom ECS task on AWS console
 
-```bash
-docker-compose pull
-```
+## Environment variables
 
-### 2. Customize environment variables
+### Required
 
-```bash
-cp .env.dummy .env
-vi .env
-```
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `TF_VAR_aws_region`
+- `TF_VAR_mastodon_db_pass`
+- `TF_VAR_mastodon_docker_image_tag`
+- `TF_VAR_mastodon_otp_secret`
+- `TF_VAR_mastodon_secret_key_base`
 
-See [terraform/variable.tf](/terraform/variable.tf) for more details about available variables.
+### Optional
 
-### 3. Initialize terraform state
-
-- `AWS_S3_BUCKET_TERRAFORM_STATE_NAME` (e.g. `my-mastodon-terraform-state`)
-- `AWS_S3_BUCKET_TERRAFORM_STATE_KEY` (e.g. `terraform.tfstate`)
-- `AWS_S3_BUCKET_TERRAFORM_STATE_REGION` (e.g. `ap-northeast-1`)
-
-```bash
-docker-compose run --rm terraform init \
-  -backend=true \
-  -backend-config="bucket=${AWS_S3_BUCKET_TERRAFORM_STATE_NAME}" \
-  -backend-config="key=${AWS_S3_BUCKET_TERRAFORM_STATE_KEY}" \
-  -backend-config="region=${AWS_S3_BUCKET_TERRAFORM_STATE_REGION}"
-```
-
-### 4. Create resources on AWS
-
-```bash
-docker-compose run --rm terraform apply
-```
-
-### 5. Build docker image
-
-```bash
-git clone https://github.com/tootsuite/mastodon.git
-docker build --tag mastodon mastodon
-docker run --env SECRET_KEY_BASE=dummy --volume $(pwd)/mastodon/public/assets:/mastodon/public/assets mastodon bundle exec rake assets:precompile
-rm mastodon/.dockerignore
-docker build --tag ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${TF_VAR_mastodon_docker_image_tag} mastodon
-```
-
-### 6. Push docker image
-
-```bash
-eval $(aws ecr get-login --region ${AWS_REGION})
-docker push ${MASTODON_DOCKER_IMAGE_REPOSITORY_URL}:${TF_VAR_mastodon_docker_image_tag}
-```
+- `TF_VAR_mastodon_aws_access_key_id`
+- `TF_VAR_mastodon_aws_secret_access_key`
+- `TF_VAR_mastodon_db_name`
+- `TF_VAR_mastodon_db_user`
+- `TF_VAR_mastodon_default_locale`
+- `TF_VAR_mastodon_email_domain_blacklist`
+- `TF_VAR_mastodon_email_domain_whitelist`
+- `TF_VAR_mastodon_local_domain`
+- `TF_VAR_mastodon_local_https`
+- `TF_VAR_mastodon_node_env`
+- `TF_VAR_mastodon_node_streaming_api_base_url`
+- `TF_VAR_mastodon_node_streaming_cluster_num`
+- `TF_VAR_mastodon_node_streaming_log_level`
+- `TF_VAR_mastodon_node_streaming_port`
+- `TF_VAR_mastodon_paperclip_root_path`
+- `TF_VAR_mastodon_paperclip_root_url`
+- `TF_VAR_mastodon_paperclip_secret`
+- `TF_VAR_mastodon_prepared_statements`
+- `TF_VAR_mastodon_s3_bucket`
+- `TF_VAR_mastodon_s3_cloudfront_host`
+- `TF_VAR_mastodon_s3_enabled`
+- `TF_VAR_mastodon_s3_endpoint`
+- `TF_VAR_mastodon_s3_hostname`
+- `TF_VAR_mastodon_s3_protocol`
+- `TF_VAR_mastodon_s3_region`
+- `TF_VAR_mastodon_single_user_mode`
+- `TF_VAR_mastodon_smtp_auth_method`
+- `TF_VAR_mastodon_smtp_delivery_method`
+- `TF_VAR_mastodon_smtp_domain`
+- `TF_VAR_mastodon_smtp_enable_starttls_auto`
+- `TF_VAR_mastodon_smtp_from_address`
+- `TF_VAR_mastodon_smtp_login`
+- `TF_VAR_mastodon_smtp_openssl_verify_mode`
+- `TF_VAR_mastodon_smtp_password`
+- `TF_VAR_mastodon_smtp_port`
+- `TF_VAR_mastodon_smtp_server`
 
 ## Resources
 
