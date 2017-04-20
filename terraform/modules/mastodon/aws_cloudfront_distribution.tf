@@ -69,7 +69,7 @@ resource "aws_cloudfront_distribution" "mastodon" {
 
   viewer_certificate {
     acm_certificate_arn            = "${var.aws_acm_certificate_arn}"
-    cloudfront_default_certificate = true
+    cloudfront_default_certificate = "${var.aws_acm_certificate_arn == "" ? "1" : "0"}"
     minimum_protocol_version       = "TLSv1"
     ssl_support_method             = "sni-only"
   }
