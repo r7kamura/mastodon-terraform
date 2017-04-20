@@ -117,16 +117,64 @@ ruby -r securerandom -e "puts SecureRandom.hex(64)"
 
 ## Optional environment variables
 
-- `TF_VAR_aws_ecs_task_definition_mastodon_node_streaming_memory`
-- `TF_VAR_aws_ecs_task_definition_mastodon_rails_db_migration_memory`
-- `TF_VAR_aws_ecs_task_definition_mastodon_rails_db_set_up_memory`
-- `TF_VAR_aws_ecs_task_definition_mastodon_rails_puma_memory`
-- `TF_VAR_aws_ecs_task_definition_mastodon_rails_sidekiq_memory`
-- `TF_VAR_mastodon_aws_access_key_id`
-- `TF_VAR_mastodon_aws_secret_access_key`
-- `TF_VAR_mastodon_db_name`
-- `TF_VAR_mastodon_db_user`
-- `TF_VAR_mastodon_default_locale`
+### TF_VAR_aws_ecs_task_definition_mastodon_node_streaming_memory
+
+Memory size for node_streaming ECS task.
+
+default: `300`
+
+### TF_VAR_aws_ecs_task_definition_mastodon_rails_db_migration_memory
+
+Memory size for rails_db_migration ECS task.
+
+default: `300`
+
+### TF_VAR_aws_ecs_task_definition_mastodon_rails_db_set_up_memory
+
+Memory size for rails_db_set_up ECS task.
+
+default: `300`
+
+### TF_VAR_aws_ecs_task_definition_mastodon_rails_puma_memory
+
+Memory size for rails_puma ECS task.
+
+default: `300`
+
+### TF_VAR_aws_ecs_task_definition_mastodon_rails_sidekiq_memory
+
+Memory size for rails_sidekiq ECS task.
+
+default: `300`
+
+### TF_VAR_mastodon_aws_access_key_id
+
+AWS IAM user access key ID for Rails to access to AWS API.
+
+### TF_VAR_mastodon_aws_secret_access_key
+
+AWS IAM user secret access key for Rails to access to AWS API.
+
+### TF_VAR_mastodon_db_name
+
+DB name.
+
+default: `mastodon`
+
+### TF_VAR_mastodon_db_user
+
+DB user name.
+
+default: `root`
+
+### TF_VAR_mastodon_default_locale
+
+Default locale.
+
+default: `en`
+
+### Others
+
 - `TF_VAR_mastodon_email_domain_blacklist`
 - `TF_VAR_mastodon_email_domain_whitelist`
 - `TF_VAR_mastodon_local_domain`
