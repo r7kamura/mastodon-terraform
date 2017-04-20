@@ -123,6 +123,14 @@ ruby -r securerandom -e "puts SecureRandom.hex(64)"
 
 ## Optional environment variables
 
+### TF_VAR_aws_acm_certificate_arn
+
+If you want to use HTTPS,
+create free SSL certificate for your domain on Amazon Certificate Manager  on us-east-1 region,
+then set its ARN to this environment variable.
+
+e.g. `arn:aws:acm:us-east-1:123456789012:certificate/12345678-90ab-cdef-1234-567890abcdef`
+
 ### TF_VAR_aws_ecs_task_definition_mastodon_node_streaming_memory
 
 Memory size for node_streaming ECS task.
