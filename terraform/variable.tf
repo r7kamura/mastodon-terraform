@@ -56,9 +56,7 @@ variable "mastodon_email_domain_whitelist" {
   default = ""
 }
 
-variable "mastodon_local_domain" {
-  default = "example.com"
-}
+variable "mastodon_local_domain" {}
 
 variable "mastodon_local_https" {
   default = "false"

@@ -1,4 +1,5 @@
 resource "aws_cloudfront_distribution" "mastodon" {
+  aliases = ["${var.mastodon_local_domain}"]
   comment = "mastodon"
   enabled = true
 

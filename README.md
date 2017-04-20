@@ -95,6 +95,12 @@ e.g. `123`
 
 Note: this variable is not required at the 1st time because we need to create ECR repository before building Mastodon Docker image.
 
+### TF_VAR_mastodon_local_domain
+
+The domain that your Mastodon instance will run on.
+
+e.g. `example.com`
+
 ### TF_VAR_mastodon_otp_secret
 
 One-time password secret
@@ -177,7 +183,6 @@ default: `en`
 
 - `TF_VAR_mastodon_email_domain_blacklist`
 - `TF_VAR_mastodon_email_domain_whitelist`
-- `TF_VAR_mastodon_local_domain`
 - `TF_VAR_mastodon_local_https`
 - `TF_VAR_mastodon_node_env`
 - `TF_VAR_mastodon_node_streaming_api_base_url`
