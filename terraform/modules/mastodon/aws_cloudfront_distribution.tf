@@ -9,7 +9,7 @@ resource "aws_cloudfront_distribution" "mastodon" {
     default_ttl            = 3600
     max_ttl                = 86400
     min_ttl                = 0
-    viewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = "allow-all"
     path_pattern           = "/assets/*"
     compress               = true
     target_origin_id       = "mastodon_alb"
@@ -36,7 +36,7 @@ resource "aws_cloudfront_distribution" "mastodon" {
     default_ttl            = 0
     max_ttl                = 0
     min_ttl                = 0
-    viewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = "allow-all"
     target_origin_id       = "mastodon_alb"
 
     forwarded_values {
