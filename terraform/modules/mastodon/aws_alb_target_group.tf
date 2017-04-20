@@ -29,7 +29,8 @@ resource "aws_alb_target_group" "mastodon_rails_puma" {
   health_check {
     healthy_threshold   = 2
     interval            = 60
-    path                = "/"
+    matcher             = "200"
+    path                = "/about"
     timeout             = 10
     unhealthy_threshold = 2
   }
