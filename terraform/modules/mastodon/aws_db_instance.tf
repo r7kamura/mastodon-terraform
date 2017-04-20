@@ -12,6 +12,7 @@ resource "aws_db_instance" "mastodon" {
   name                       = "mastodon"
   parameter_group_name       = "${aws_db_parameter_group.mastodon.name}"
   password                   = "${var.mastodon_db_pass}"
+  skip_final_snapshot        = true
   username                   = "${var.mastodon_db_user}"
 
   vpc_security_group_ids = [
