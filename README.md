@@ -161,6 +161,14 @@ Memory size for rails_sidekiq ECS task.
 
 default: `300`
 
+### TF_VAR_aws_db_instance_mastodon_instance_class
+
+AWS RDS DB instance class.
+
+default: `db.t2.micro`
+
+FYI: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html.
+
 ### TF_VAR_aws_launch_configuration_mastodon_instance_type
 
 AWS EC2 instance type.

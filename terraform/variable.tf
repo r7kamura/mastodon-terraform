@@ -2,6 +2,10 @@ variable "aws_acm_certificate_arn" {
   default = ""
 }
 
+variable "aws_db_instance_mastodon_instance_class" {
+  default = "db.t2.micro"
+}
+
 variable "aws_ecs_task_definition_mastodon_node_streaming_memory" {
   default = "300"
 }

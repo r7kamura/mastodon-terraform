@@ -7,7 +7,7 @@ resource "aws_db_instance" "mastodon" {
   engine                     = "postgres"
   engine_version             = "9.6.1"
   identifier                 = "mastodon"
-  instance_class             = "db.t2.micro"
+  instance_class             = "${var.aws_db_instance_mastodon_instance_class}"
   multi_az                   = false
   name                       = "mastodon"
   parameter_group_name       = "${aws_db_parameter_group.mastodon.name}"
