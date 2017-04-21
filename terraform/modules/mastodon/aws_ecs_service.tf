@@ -1,6 +1,5 @@
 resource "aws_ecs_service" "mastodon_node_streaming" {
   cluster                            = "${aws_ecs_cluster.mastodon.id}"
-  depends_on                         = ["aws_iam_policy_attachment.mastodon_ecs_service"]
   deployment_minimum_healthy_percent = 50
   desired_count                      = 1
   iam_role                           = "${aws_iam_role.mastodon_ecs.arn}"
@@ -17,7 +16,6 @@ resource "aws_ecs_service" "mastodon_node_streaming" {
 
 resource "aws_ecs_service" "mastodon_rails_puma" {
   cluster                            = "${aws_ecs_cluster.mastodon.id}"
-  depends_on                         = ["aws_iam_policy_attachment.mastodon_ecs_service"]
   deployment_minimum_healthy_percent = 50
   desired_count                      = 1
   iam_role                           = "${aws_iam_role.mastodon_ecs.arn}"
@@ -34,7 +32,6 @@ resource "aws_ecs_service" "mastodon_rails_puma" {
 
 resource "aws_ecs_service" "mastodon_rails_sidekiq" {
   cluster                            = "${aws_ecs_cluster.mastodon.id}"
-  depends_on                         = ["aws_iam_policy_attachment.mastodon_ecs_service"]
   deployment_minimum_healthy_percent = 50
   desired_count                      = 1
   name                               = "mastodon_rails_sidekiq"
