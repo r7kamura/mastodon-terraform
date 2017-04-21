@@ -131,6 +131,14 @@ then set its ARN to this environment variable.
 
 e.g. `arn:aws:acm:us-east-1:123456789012:certificate/12345678-90ab-cdef-1234-567890abcdef`
 
+### TF_VAR_aws_db_instance_mastodon_instance_class
+
+AWS RDS DB instance class.
+
+default: `db.t2.micro`
+
+FYI: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html.
+
 ### TF_VAR_aws_ecs_task_definition_mastodon_node_streaming_memory
 
 Memory size for node_streaming ECS task.
@@ -160,14 +168,6 @@ default: `300`
 Memory size for rails_sidekiq ECS task.
 
 default: `300`
-
-### TF_VAR_aws_db_instance_mastodon_instance_class
-
-AWS RDS DB instance class.
-
-default: `db.t2.micro`
-
-FYI: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html.
 
 ### TF_VAR_aws_launch_configuration_mastodon_instance_type
 
