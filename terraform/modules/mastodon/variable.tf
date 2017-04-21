@@ -26,6 +26,8 @@ variable "aws_ecs_task_definition_mastodon_rails_puma_memory" {}
 
 variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {}
 
+variable "aws_launch_configuration_mastodon_instance_type" {}
+
 variable "mastodon_aws_access_key_id" {}
 
 variable "mastodon_aws_secret_access_key" {}

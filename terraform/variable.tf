@@ -22,6 +22,10 @@ variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {
   default = "300"
 }
 
+variable "aws_launch_configuration_mastodon_instance_type" {
+  default = "t2.micro"
+}
+
 variable "mastodon_aws_access_key_id" {
   default = ""
 }

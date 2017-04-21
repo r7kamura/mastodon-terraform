@@ -161,6 +161,14 @@ Memory size for rails_sidekiq ECS task.
 
 default: `300`
 
+### TF_VAR_aws_launch_configuration_mastodon_instance_type
+
+AWS EC2 instance type.
+
+default: `t2.micro`
+
+FYI: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html.
+
 ### TF_VAR_mastodon_aws_access_key_id
 
 AWS IAM user access key ID for Rails to access to AWS API.

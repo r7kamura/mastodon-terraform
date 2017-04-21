@@ -5,6 +5,7 @@ module "mastodon" {
   aws_ecs_task_definition_mastodon_rails_db_set_up_memory    = "${var.aws_ecs_task_definition_mastodon_rails_db_set_up_memory}"
   aws_ecs_task_definition_mastodon_rails_puma_memory         = "${var.aws_ecs_task_definition_mastodon_rails_puma_memory}"
   aws_ecs_task_definition_mastodon_rails_sidekiq_memory      = "${var.aws_ecs_task_definition_mastodon_rails_sidekiq_memory}"
+  aws_launch_configuration_mastodon_instance_type           = "${var.aws_launch_configuration_mastodon_instance_type}"
   mastodon_aws_access_key_id                                 = "${var.mastodon_aws_access_key_id}"
   mastodon_aws_secret_access_key                             = "${var.mastodon_aws_secret_access_key}"
   mastodon_db_name                                           = "${var.mastodon_db_name}"
