@@ -102,10 +102,6 @@ data "template_file" "mastodon_environment_variables_rails" {
       "value": "$${mastodon_s3_hostname}"
     },
     {
-      "name": "S3_HOSTNAME",
-      "value": "$${mastodon_s3_hostname}"
-    },
-    {
       "name": "S3_PROTOCOL",
       "value": "$${mastodon_s3_protocol}"
     },
