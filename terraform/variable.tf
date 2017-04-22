@@ -139,7 +139,7 @@ variable "mastodon_smtp_domain" {
 }
 
 variable "mastodon_smtp_enable_starttls_auto" {
-  default = ""
+  default = "true"
 }
 
 variable "mastodon_smtp_from_address" {
@@ -151,7 +151,7 @@ variable "mastodon_smtp_login" {
 }
 
 variable "mastodon_smtp_openssl_verify_mode" {
-  default = ""
+  default = "peer"
 }
 
 variable "mastodon_smtp_password" {
