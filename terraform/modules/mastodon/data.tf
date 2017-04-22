@@ -197,7 +197,6 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_s3_enabled                  = "${var.mastodon_s3_enabled}"
     mastodon_s3_endpoint                 = "${var.mastodon_s3_endpoint}"
     mastodon_s3_hostname                 = "${var.mastodon_s3_hostname}"
-    mastodon_s3_hostname                 = "${var.mastodon_s3_hostname}"
     mastodon_s3_protocol                 = "${var.mastodon_s3_protocol}"
     mastodon_s3_region                   = "${var.mastodon_s3_region}"
     mastodon_secret_key_base             = "${var.mastodon_secret_key_base}"
