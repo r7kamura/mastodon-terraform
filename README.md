@@ -75,6 +75,19 @@ AWS IAM User secret access key for Terraform.
 
 e.g. `abcdefghijklmnopqrstuvwxyz0123456789/+AB`
 
+### AWS_S3_BUCKET_TERRAFORM_STATE_NAME
+
+The domain that your terraform state file will be stored.
+To run Terraform from CircleCI, you need to prepare a private AWS S3 bucket to store your terraform state file.
+
+e.g. `your-s3-bucket-name`
+
+### AWS_S3_BUCKET_TERRAFORM_STATE_KEY
+
+Where to locate the terraform state file on the specified AWS S3 bucket.
+
+e.g. `terraform.tfstate` (recommended)
+
 ### TF_VAR_mastodon_db_pass
 
 Database password.
