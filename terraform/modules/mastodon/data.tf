@@ -102,10 +102,6 @@ data "template_file" "mastodon_environment_variables_rails" {
       "value": "$${mastodon_s3_hostname}"
     },
     {
-      "name": "S3_HOSTNAME",
-      "value": "$${mastodon_s3_hostname}"
-    },
-    {
       "name": "S3_PROTOCOL",
       "value": "$${mastodon_s3_protocol}"
     },
@@ -196,7 +192,6 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_s3_cloudfront_host          = "${var.mastodon_s3_cloudfront_host}"
     mastodon_s3_enabled                  = "${var.mastodon_s3_enabled}"
     mastodon_s3_endpoint                 = "${var.mastodon_s3_endpoint}"
-    mastodon_s3_hostname                 = "${var.mastodon_s3_hostname}"
     mastodon_s3_hostname                 = "${var.mastodon_s3_hostname}"
     mastodon_s3_protocol                 = "${var.mastodon_s3_protocol}"
     mastodon_s3_region                   = "${var.mastodon_s3_region}"
