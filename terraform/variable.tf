@@ -151,7 +151,7 @@ variable "mastodon_smtp_login" {
 }
 
 variable "mastodon_smtp_openssl_verify_mode" {
-  default = "peer"
+  default = "none"
 }
 
 variable "mastodon_smtp_password" {
