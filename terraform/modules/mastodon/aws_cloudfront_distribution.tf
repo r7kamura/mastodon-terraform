@@ -36,7 +36,7 @@ resource "aws_cloudfront_distribution" "mastodon" {
     default_ttl            = 0
     max_ttl                = 0
     min_ttl                = 0
-    viewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = "${var.aws_acm_certificate_arn == "" ? "allow-all" : "redirect-to-https"}"
     target_origin_id       = "mastodon_alb"
 
     forwarded_values {
@@ -55,7 +55,7 @@ resource "aws_cloudfront_distribution" "mastodon" {
 
     custom_header {
       name  = "X-Forwarded-Scheme"
-      value = "https"
+      value = "${var.aws_acm_certificate_arn == "" ? "http" : "https"}"
     }
 
     custom_origin_config {
