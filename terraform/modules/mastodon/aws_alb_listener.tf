@@ -1,6 +1,6 @@
 resource "aws_alb_listener" "mastodon_node_streaming" {
   load_balancer_arn = "${aws_alb.mastodon.arn}"
-  port              = "4000"
+  port              = "${var.mastodon_node_streaming_port}"
   protocol          = "HTTP"
 
   default_action {

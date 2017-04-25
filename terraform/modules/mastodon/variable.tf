@@ -102,4 +102,6 @@ variable "mastodon_node_streaming_api_base_url" {}
 
 variable "mastodon_node_streaming_cluster_num" {}
 
-variable "mastodon_node_streaming_port" {}
+variable "mastodon_node_streaming_port" {
+  default = "4000"
+}

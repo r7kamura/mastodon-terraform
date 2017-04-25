@@ -11,7 +11,7 @@ resource "aws_alb_target_group" "mastodon_node_streaming" {
   }
 
   name                 = "mastodon-node-streaming"
-  port                 = 4000
+  port                 = "${var.mastodon_node_streaming_port}"
   protocol             = "HTTP"
 
   stickiness {

@@ -35,7 +35,6 @@ dependencies:
       if [ -n "${TF_VAR_mastodon_local_domain}" ]; then echo TF_VAR_mastodon_local_domain=${TF_VAR_mastodon_local_domain} >> .env; fi
       if [ -n "${TF_VAR_mastodon_node_streaming_api_base_url}" ]; then echo TF_VAR_mastodon_node_streaming_api_base_url=${TF_VAR_mastodon_node_streaming_api_base_url} >> .env; fi
       if [ -n "${TF_VAR_mastodon_node_streaming_cluster_num}" ]; then echo TF_VAR_mastodon_node_streaming_cluster_num=${TF_VAR_mastodon_node_streaming_cluster_num} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_node_streaming_port}" ]; then echo TF_VAR_mastodon_node_streaming_port=${TF_VAR_mastodon_node_streaming_port} >> .env; fi
       if [ -n "${TF_VAR_mastodon_paperclip_root_path}" ]; then echo TF_VAR_mastodon_paperclip_root_path=${TF_VAR_mastodon_paperclip_root_path} >> .env; fi
       if [ -n "${TF_VAR_mastodon_paperclip_root_url}" ]; then echo TF_VAR_mastodon_paperclip_root_url=${TF_VAR_mastodon_paperclip_root_url} >> .env; fi
       if [ -n "${TF_VAR_mastodon_paperclip_secret}" ]; then echo TF_VAR_mastodon_paperclip_secret=${TF_VAR_mastodon_paperclip_secret} >> .env; fi

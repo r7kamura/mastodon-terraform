@@ -17,8 +17,8 @@ resource "aws_security_group" "mastodon_alb" {
   }
 
   ingress = {
-    from_port   = 4000
-    to_port     = 4000
+    from_port   = "${var.mastodon_node_streaming_port}"
+    to_port     = "${var.mastodon_node_streaming_port}"
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

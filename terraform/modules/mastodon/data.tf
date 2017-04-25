@@ -240,10 +240,6 @@ data "template_file" "mastodon_environment_variables_streaming" {
       "value": "production"
     },
     {
-      "name": "PORT",
-      "value": "$${mastodon_node_streaming_port}"
-    },
-    {
       "name": "REDIS_HOST",
       "value": "$${mastodon_redis_host}"
     },

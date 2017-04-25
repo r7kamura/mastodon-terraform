@@ -19,7 +19,7 @@ resource "aws_ecs_task_definition" "mastodon_node_streaming" {
       "name": "mastodon_node_streaming",
       "portMappings": [
         {
-          "containerPort": 4000,
+          "containerPort": ${var.mastodon_node_streaming_port},
           "protocol": "tcp"
         }
       ]

@@ -7,7 +7,7 @@ resource "aws_ecs_service" "mastodon_node_streaming" {
 
   load_balancer {
     container_name   = "mastodon_node_streaming"
-    container_port   = "4000"
+    container_port   = "${var.mastodon_node_streaming_port}"
     target_group_arn = "${aws_alb_target_group.mastodon_node_streaming.arn}"
   }
 

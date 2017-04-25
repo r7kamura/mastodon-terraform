@@ -43,6 +43,5 @@ module "mastodon" {
   mastodon_smtp_server                                       = "${var.mastodon_smtp_server}"
   mastodon_node_streaming_api_base_url                       = "${var.mastodon_node_streaming_api_base_url}"
   mastodon_node_streaming_cluster_num                        = "${var.mastodon_node_streaming_cluster_num}"
-  mastodon_node_streaming_port                               = "${var.mastodon_node_streaming_port}"
   source                                                     = "./modules/mastodon"
 }
