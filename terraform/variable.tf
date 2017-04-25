@@ -67,7 +67,7 @@ variable "mastodon_email_domain_whitelist" {
 variable "mastodon_local_domain" {}
 
 variable "mastodon_local_https" {
-  default = "false"
+  default = "true"
 }
 
 variable "mastodon_node_env" {
