@@ -36,7 +36,7 @@ resource "aws_cloudfront_distribution" "mastodon" {
     default_ttl            = 0
     max_ttl                = 0
     min_ttl                = 0
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect-to-https"
     target_origin_id       = "mastodon_alb"
 
     forwarded_values {
@@ -52,6 +52,11 @@ resource "aws_cloudfront_distribution" "mastodon" {
   origin {
     domain_name = "${aws_alb.mastodon.dns_name}"
     origin_id   = "mastodon_alb"
+
+    custom_header {
+      name  = "X-Forwarded-Scheme"
+      value = "https"
+    }
 
     custom_origin_config {
       http_port              = 80
