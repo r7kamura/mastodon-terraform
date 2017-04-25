@@ -166,10 +166,6 @@ variable "mastodon_node_streaming_cluster_num" {
   default = "1"
 }
 
-variable "mastodon_node_streaming_log_level" {
-  default = "verbose"
-}
-
 variable "mastodon_node_streaming_port" {
   default = "4000"
 }

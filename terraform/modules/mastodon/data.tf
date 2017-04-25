@@ -236,10 +236,6 @@ data "template_file" "mastodon_environment_variables_streaming" {
       "value": "$${mastodon_db_user}"
     },
     {
-      "name": "LOG_LEVEL",
-      "value": "$${mastodon_node_streaming_log_level}"
-    },
-    {
       "name": "NODE_ENV",
       "value": "production"
     },
@@ -264,7 +260,6 @@ data "template_file" "mastodon_environment_variables_streaming" {
     mastodon_db_pass                  = "${var.mastodon_db_pass}"
     mastodon_db_port                  = "${aws_db_instance.mastodon.port}"
     mastodon_db_user                  = "${aws_db_instance.mastodon.username}"
-    mastodon_node_streaming_log_level = "${var.mastodon_node_streaming_log_level}"
     mastodon_node_streaming_port      = "${var.mastodon_node_streaming_port}"
     mastodon_redis_host               = "${aws_elasticache_cluster.mastodon.cache_nodes.0.address}"
     mastodon_redis_port               = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
