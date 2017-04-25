@@ -18,7 +18,6 @@ module "mastodon" {
   mastodon_email_domain_whitelist                            = "${var.mastodon_email_domain_whitelist}"
   mastodon_local_domain                                      = "${var.mastodon_local_domain}"
   mastodon_local_https                                       = "${var.mastodon_local_https}"
-  mastodon_node_env                                          = "${var.mastodon_node_env}"
   mastodon_otp_secret                                        = "${var.mastodon_otp_secret}"
   mastodon_paperclip_root_path                               = "${var.mastodon_paperclip_root_path}"
   mastodon_paperclip_root_url                                = "${var.mastodon_paperclip_root_url}"

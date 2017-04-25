@@ -70,10 +70,6 @@ variable "mastodon_local_https" {
   default = "true"
 }
 
-variable "mastodon_node_env" {
-  default = "production"
-}
-
 variable "mastodon_otp_secret" {}
 
 variable "mastodon_paperclip_root_path" {
