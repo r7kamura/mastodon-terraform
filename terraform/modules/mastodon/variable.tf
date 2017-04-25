@@ -50,8 +50,6 @@ variable "mastodon_email_domain_whitelist" {}
 
 variable "mastodon_local_domain" {}
 
-variable "mastodon_local_https" {}
-
 variable "mastodon_otp_secret" {}
 
 variable "mastodon_paperclip_root_path" {}

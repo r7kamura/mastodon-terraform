@@ -180,7 +180,7 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_email_domain_blacklist      = "${var.mastodon_email_domain_blacklist}"
     mastodon_email_domain_whitelist      = "${var.mastodon_email_domain_whitelist}"
     mastodon_local_domain                = "${var.mastodon_local_domain}"
-    mastodon_local_https                 = "${var.mastodon_local_https}"
+    mastodon_local_https                 = "${var.aws_acm_certificate_arn == "" ? "false" : "true"}"
     mastodon_otp_secret                  = "${var.mastodon_otp_secret}"
     mastodon_paperclip_root_path         = "${var.mastodon_paperclip_root_path}"
     mastodon_paperclip_root_url          = "${var.mastodon_paperclip_root_url}"

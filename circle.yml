@@ -33,7 +33,6 @@ dependencies:
       if [ -n "${TF_VAR_mastodon_email_domain_blacklist}" ]; then echo TF_VAR_mastodon_email_domain_blacklist=${TF_VAR_mastodon_email_domain_blacklist} >> .env; fi
       if [ -n "${TF_VAR_mastodon_email_domain_whitelist}" ]; then echo TF_VAR_mastodon_email_domain_whitelist=${TF_VAR_mastodon_email_domain_whitelist} >> .env; fi
       if [ -n "${TF_VAR_mastodon_local_domain}" ]; then echo TF_VAR_mastodon_local_domain=${TF_VAR_mastodon_local_domain} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_local_https}" ]; then echo TF_VAR_mastodon_local_https=${TF_VAR_mastodon_local_https} >> .env; fi
       if [ -n "${TF_VAR_mastodon_node_streaming_api_base_url}" ]; then echo TF_VAR_mastodon_node_streaming_api_base_url=${TF_VAR_mastodon_node_streaming_api_base_url} >> .env; fi
       if [ -n "${TF_VAR_mastodon_node_streaming_cluster_num}" ]; then echo TF_VAR_mastodon_node_streaming_cluster_num=${TF_VAR_mastodon_node_streaming_cluster_num} >> .env; fi
       if [ -n "${TF_VAR_mastodon_node_streaming_log_level}" ]; then echo TF_VAR_mastodon_node_streaming_log_level=${TF_VAR_mastodon_node_streaming_log_level} >> .env; fi
