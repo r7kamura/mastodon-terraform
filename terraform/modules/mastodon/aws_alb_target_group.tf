@@ -6,12 +6,12 @@ resource "aws_alb_target_group" "mastodon_node_streaming" {
   deregistration_delay = 10
 
   health_check {
-    healthy_threshold   = 2
+    healthy_threshold   = 1
     interval            = 60
     matcher             = "401"
     path                = "/"
     timeout             = 10
-    unhealthy_threshold = 2
+    unhealthy_threshold = 5
   }
 
   stickiness {
@@ -27,12 +27,12 @@ resource "aws_alb_target_group" "mastodon_rails_puma" {
   deregistration_delay = 10
 
   health_check {
-    healthy_threshold   = 2
+    healthy_threshold   = 1
     interval            = 60
     matcher             = "200"
     path                = "/about"
     timeout             = 10
-    unhealthy_threshold = 2
+    unhealthy_threshold = 5
   }
 
   stickiness {
