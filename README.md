@@ -112,7 +112,7 @@ Note: this variable is not required at the 1st time because we need to create EC
 
 The domain that your Mastodon instance will run on.
 
-e.g. `example.com`
+e.g. `mastodon.example.com`
 
 ### TF_VAR_mastodon_otp_secret
 
@@ -216,16 +216,32 @@ Default locale.
 
 default: `en`
 
+### TF_VAR_mastodon_email_domain_blacklist
+
+Email domain blacklist.
+
+### TF_VAR_mastodon_email_domain_whitelist
+
+Email domain whitelist.
+
+### TF_VAR_mastodon_node_streaming_api_base_url
+
+The base URL of Streaming API endpoint.
+
+e.g. `https://mastodon-streaming.example.com:4000`
+
+### TF_VAR_mastodon_node_streaming_cluster_num
+
+default: `1`
+
+### TF_VAR_mastodon_single_user_mode
+
+Should the instance run in single user mode? (Disable registrations, redirect to front page)
+
+default: `false`
+
 ### Others
 
-- `TF_VAR_mastodon_email_domain_blacklist`
-- `TF_VAR_mastodon_email_domain_whitelist`
-- `TF_VAR_mastodon_local_https`
-- `TF_VAR_mastodon_node_env`
-- `TF_VAR_mastodon_node_streaming_api_base_url`
-- `TF_VAR_mastodon_node_streaming_cluster_num`
-- `TF_VAR_mastodon_node_streaming_log_level`
-- `TF_VAR_mastodon_node_streaming_port`
 - `TF_VAR_mastodon_paperclip_root_path`
 - `TF_VAR_mastodon_paperclip_root_url`
 - `TF_VAR_mastodon_paperclip_secret`
@@ -237,7 +253,6 @@ default: `en`
 - `TF_VAR_mastodon_s3_hostname`
 - `TF_VAR_mastodon_s3_protocol`
 - `TF_VAR_mastodon_s3_region`
-- `TF_VAR_mastodon_single_user_mode`
 - `TF_VAR_mastodon_smtp_auth_method`
 - `TF_VAR_mastodon_smtp_delivery_method`
 - `TF_VAR_mastodon_smtp_domain`
