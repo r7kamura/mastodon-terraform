@@ -6,7 +6,7 @@ resource "aws_alb_target_group" "mastodon_node_streaming" {
   deregistration_delay = 10
 
   health_check {
-    healthy_threshold   = 1
+    healthy_threshold   = 2
     interval            = 60
     matcher             = "401"
     path                = "/"
@@ -27,7 +27,7 @@ resource "aws_alb_target_group" "mastodon_rails_puma" {
   deregistration_delay = 10
 
   health_check {
-    healthy_threshold   = 1
+    healthy_threshold   = 2
     interval            = 60
     matcher             = "200"
     path                = "/about"
