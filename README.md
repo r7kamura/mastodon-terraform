@@ -8,7 +8,7 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 └---------------┘
 ▲               ▲
 |               |
-(HTTPS)         (WebSocket)
+(HTTPS)         (WSS)
 |               |
 ▼               |
 ┌------------┐  |
@@ -24,7 +24,7 @@ Boilerplate for running [Mastodon](https://github.com/tootsuite/mastodon) on AWS
 └---------------┘
 ▲               ▲
 |               |
-(HTTP)          (WebSocket)
+(HTTP)          (WS)
 |               |
 ▼               ▼
 ┌------------------------┐
