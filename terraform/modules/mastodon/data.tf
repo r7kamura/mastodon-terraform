@@ -251,13 +251,13 @@ data "template_file" "mastodon_environment_variables_streaming" {
   JSON
 
   vars = {
-    mastodon_db_host                  = "${aws_db_instance.mastodon.address}"
-    mastodon_db_name                  = "${aws_db_instance.mastodon.name}"
-    mastodon_db_pass                  = "${var.mastodon_db_pass}"
-    mastodon_db_port                  = "${aws_db_instance.mastodon.port}"
-    mastodon_db_user                  = "${aws_db_instance.mastodon.username}"
-    mastodon_node_streaming_port      = "${var.mastodon_node_streaming_port}"
-    mastodon_redis_host               = "${aws_elasticache_cluster.mastodon.cache_nodes.0.address}"
-    mastodon_redis_port               = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
+    mastodon_db_host             = "${aws_db_instance.mastodon.address}"
+    mastodon_db_name             = "${aws_db_instance.mastodon.name}"
+    mastodon_db_pass             = "${var.mastodon_db_pass}"
+    mastodon_db_port             = "${aws_db_instance.mastodon.port}"
+    mastodon_db_user             = "${aws_db_instance.mastodon.username}"
+    mastodon_node_streaming_port = "${var.mastodon_node_streaming_port}"
+    mastodon_redis_host          = "${aws_elasticache_cluster.mastodon.cache_nodes.0.address}"
+    mastodon_redis_port          = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
   }
 }
