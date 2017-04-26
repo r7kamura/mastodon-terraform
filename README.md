@@ -139,10 +139,18 @@ ruby -r securerandom -e "puts SecureRandom.hex(64)"
 ### TF_VAR_aws_acm_certificate_arn
 
 If you want to use HTTPS,
-create free SSL certificate for your domain on Amazon Certificate Manager  on us-east-1 region,
+create free SSL certificate for your domain on Amazon Certificate Manager on us-east-1 region,
 then set its ARN to this environment variable.
 
 e.g. `arn:aws:acm:us-east-1:123456789012:certificate/12345678-90ab-cdef-1234-567890abcdef`
+
+### TF_VAR_aws_acm_certificate_arn_for_alb
+
+For using secure WebSocket connection,
+create free SSL certificate for your domain on Amazon Certificate Manager on your region,
+then set its ARN to this environment variable too.
+
+e.g. `arn:aws:acm:ap-northeast-1:123456789012:certificate/12345678-90ab-cdef-1234-567890abcdef`
 
 ### TF_VAR_aws_db_instance_mastodon_instance_class
 

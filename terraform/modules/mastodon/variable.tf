@@ -1,5 +1,7 @@
 variable "aws_acm_certificate_arn" {}
 
+variable "aws_acm_certificate_arn_for_alb" {}
+
 variable "aws_db_instance_mastodon_instance_class" {}
 
 variable "aws_ecs_optimized_ami_ids" {

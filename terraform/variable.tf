@@ -2,6 +2,10 @@ variable "aws_acm_certificate_arn" {
   default = ""
 }
 
+variable "aws_acm_certificate_arn_for_alb" {
+  default = ""
+}
+
 variable "aws_db_instance_mastodon_instance_class" {
   default = "db.t2.micro"
 }

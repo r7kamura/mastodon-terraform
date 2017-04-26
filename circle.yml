@@ -14,6 +14,7 @@ dependencies:
       if [ -n "${AWS_DEFAULT_REGION}" ]; then echo AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} >> .env; fi
       if [ -n "${AWS_SECRET_ACCESS_KEY}" ]; then echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> .env; fi
       if [ -n "${TF_VAR_aws_acm_certificate_arn}" ]; then echo TF_VAR_aws_acm_certificate_arn=${TF_VAR_aws_acm_certificate_arn} >> .env; fi
+      if [ -n "${TF_VAR_aws_acm_certificate_arn_for_alb}" ]; then echo TF_VAR_aws_acm_certificate_arn_for_alb=${TF_VAR_aws_acm_certificate_arn_for_alb} >> .env; fi
       if [ -n "${TF_VAR_aws_db_instance_mastodon_instance_class}" ]; then echo TF_VAR_aws_db_instance_mastodon_instance_class=${TF_VAR_aws_db_instance_mastodon_instance_class} >> .env; fi
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_node_streaming_memory}" ]; then echo aws_ecs_task_definition_mastodon_node_streaming_memory=${aws_ecs_task_definition_mastodon_node_streaming_memory} >> .env; fi
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_rails_db_migration_memory}" ]; then echo aws_ecs_task_definition_mastodon_rails_db_migration_memory=${aws_ecs_task_definition_mastodon_rails_db_migration_memory} >> .env; fi
