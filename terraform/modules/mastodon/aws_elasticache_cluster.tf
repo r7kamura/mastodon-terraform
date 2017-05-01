@@ -1,7 +1,7 @@
 resource "aws_elasticache_cluster" "mastodon" {
   cluster_id           = "mastodon"
   engine               = "redis"
-  node_type            = "cache.t2.micro"
+  node_type            = "${var.aws_elasticache_cluster_node_type}"
   port                 = 6379
   num_cache_nodes      = 1
   parameter_group_name = "default.redis3.2"

@@ -190,6 +190,14 @@ Memory size for rails_sidekiq ECS task.
 
 default: `300`
 
+### TF_VAR_aws_elasticache_cluster_node_type
+
+AWS Elasticache Cluster node type.
+
+default: `cache.t2.micro`
+
+FYI: https://aws.amazon.com/jp/elasticache/pricing/.
+
 ### TF_VAR_aws_launch_configuration_mastodon_instance_type
 
 AWS EC2 instance type.

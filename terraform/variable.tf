@@ -30,6 +30,10 @@ variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {
   default = "300"
 }
 
+variable "aws_elasticache_cluster_node_type" {
+  default = "cache.t2.micro"
+}
+
 variable "aws_launch_configuration_mastodon_instance_type" {
   default = "t2.micro"
 }
