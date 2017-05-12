@@ -1,5 +1,5 @@
 resource "aws_iam_role" "mastodon_ec2" {
-  name = "mastodon_ec2"
+  name = "${var.aws_resource_base_name}_ec2"
 
   assume_role_policy = <<-JSON
 {
@@ -19,7 +19,7 @@ resource "aws_iam_role" "mastodon_ec2" {
 }
 
 resource "aws_iam_role" "mastodon_ecs" {
-  name = "mastodon_ecs"
+  name = "${var.aws_resource_base_name}_ecs"
 
   assume_role_policy = <<-JSON
 {

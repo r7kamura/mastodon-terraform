@@ -1,3 +1,3 @@
 resource "aws_ecr_repository" "mastodon" {
-  name = "mastodon"
+  name = "${var.aws_resource_base_name}"
 }

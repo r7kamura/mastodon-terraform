@@ -10,7 +10,7 @@ resource "aws_alb_target_group" "mastodon_node_streaming" {
     unhealthy_threshold = 5
   }
 
-  name     = "mastodon-node-streaming"
+  name     = "${var.aws_resource_base_name}-node-streaming"
   port     = "${var.mastodon_node_streaming_port}"
   protocol = "HTTP"
 
@@ -33,7 +33,7 @@ resource "aws_alb_target_group" "mastodon_rails_puma" {
     unhealthy_threshold = 5
   }
 
-  name     = "mastodon-rails-puma"
+  name     = "${var.aws_resource_base_name}-rails-puma"
   port     = 80
   protocol = "HTTP"
 

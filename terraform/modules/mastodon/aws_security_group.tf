@@ -1,5 +1,5 @@
 resource "aws_security_group" "mastodon_alb" {
-  name   = "mastodon_alb"
+  name   = "${var.aws_resource_base_name}_alb"
   vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {
@@ -32,7 +32,7 @@ resource "aws_security_group" "mastodon_alb" {
 }
 
 resource "aws_security_group" "mastodon_web" {
-  name   = "mastodon_web"
+  name   = "${var.aws_resource_base_name}_web"
   vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {
@@ -54,7 +54,7 @@ resource "aws_security_group" "mastodon_web" {
 }
 
 resource "aws_security_group" "mastodon_db" {
-  name   = "mastodon_db"
+  name   = "${var.aws_resource_base_name}_db"
   vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {
@@ -76,7 +76,7 @@ resource "aws_security_group" "mastodon_db" {
 }
 
 resource "aws_security_group" "mastodon_elasticache" {
-  name   = "mastodon_elasticache"
+  name   = "${var.aws_resource_base_name}_elasticache"
   vpc_id = "${aws_vpc.mastodon.id}"
 
   ingress = {

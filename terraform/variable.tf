@@ -42,6 +42,10 @@ variable "aws_launch_configuration_mastodon_instance_type" {
   default = "t2.micro"
 }
 
+variable "aws_resource_base_name" {
+  default = "mastodon"
+}
+
 variable "mastodon_administrator_name" {
   default = ""
 }
