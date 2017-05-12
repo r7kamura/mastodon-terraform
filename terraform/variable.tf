@@ -22,6 +22,10 @@ variable "aws_ecs_task_definition_mastodon_rails_db_set_up_memory" {
   default = "300"
 }
 
+variable "aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory" {
+  default = "300"
+}
+
 variable "aws_ecs_task_definition_mastodon_rails_puma_memory" {
   default = "300"
 }
@@ -36,6 +40,10 @@ variable "aws_elasticache_cluster_node_type" {
 
 variable "aws_launch_configuration_mastodon_instance_type" {
   default = "t2.micro"
+}
+
+variable "mastodon_administrator_name" {
+  default = ""
 }
 
 variable "mastodon_aws_access_key_id" {
