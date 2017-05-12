@@ -178,6 +178,12 @@ Memory size for rails_db_set_up ECS task.
 
 default: `300`
 
+### TF_VAR_aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory
+
+Memory size for rails_mastodon_make_admin_memory ECS task.
+
+default: `300`
+
 ### TF_VAR_aws_ecs_task_definition_mastodon_rails_puma_memory
 
 Memory size for rails_puma ECS task.
@@ -205,6 +211,10 @@ AWS EC2 instance type.
 default: `t2.micro`
 
 FYI: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html.
+
+### TF_VAR_mastodon_administrator_name
+
+Administrator user name for the `mastodon_rails_mastodon_make_admin` ECS task.
 
 ### TF_VAR_mastodon_aws_access_key_id
 

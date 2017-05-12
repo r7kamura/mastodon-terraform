@@ -26,6 +26,8 @@ variable "aws_ecs_task_definition_mastodon_rails_db_migration_memory" {}
 
 variable "aws_ecs_task_definition_mastodon_rails_db_set_up_memory" {}
 
+variable "aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory" {}
+
 variable "aws_ecs_task_definition_mastodon_rails_puma_memory" {}
 
 variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {}
@@ -33,6 +35,8 @@ variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {}
 variable "aws_elasticache_cluster_node_type" {}
 
 variable "aws_launch_configuration_mastodon_instance_type" {}
+
+variable "mastodon_administrator_name" {}
 
 variable "mastodon_aws_access_key_id" {}
 

@@ -76,6 +76,30 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_set_up" {
   JSON
 }
 
+resource "aws_ecs_task_definition" "mastodon_rails_mastodon_make_admin" {
+  family = "mastodon_rails_mastodon_make_admin"
+
+  container_definitions = <<-JSON
+  [
+    {
+      "command": ["bundle", "exec", "rake", "mastodon:make_admin", "USERNAME=${var.mastodon_administrator_name}"],
+      "environment": ${data.template_file.mastodon_environment_variables_rails.rendered},
+      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "mastodon",
+          "awslogs-region": "${data.aws_region.current.name}",
+          "awslogs-stream-prefix": "rails_mastodon_make_admin"
+        }
+      },
+      "memory": ${var.aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory},
+      "name": "mastodon_rails_mastodon_make_admin"
+    }
+  ]
+  JSON
+}
+
 resource "aws_ecs_task_definition" "mastodon_rails_puma" {
   family = "mastodon_rails_puma"
 
