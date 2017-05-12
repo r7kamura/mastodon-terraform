@@ -19,9 +19,11 @@ dependencies:
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_node_streaming_memory}" ]; then echo aws_ecs_task_definition_mastodon_node_streaming_memory=${aws_ecs_task_definition_mastodon_node_streaming_memory} >> .env; fi
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_rails_db_migration_memory}" ]; then echo aws_ecs_task_definition_mastodon_rails_db_migration_memory=${aws_ecs_task_definition_mastodon_rails_db_migration_memory} >> .env; fi
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_rails_db_set_up_memory}" ]; then echo aws_ecs_task_definition_mastodon_rails_db_set_up_memory=${aws_ecs_task_definition_mastodon_rails_db_set_up_memory} >> .env; fi
+      if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory}" ]; then echo aws_ecs_task_definition_mastodon_rails_db_set_up_memory=${TF_VAR_aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory} >> .env; fi
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_rails_puma_memory}" ]; then echo aws_ecs_task_definition_mastodon_rails_puma_memory=${aws_ecs_task_definition_mastodon_rails_puma_memory} >> .env; fi
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_rails_sidekiq_memory}" ]; then echo aws_ecs_task_definition_mastodon_rails_sidekiq_memory=${aws_ecs_task_definition_mastodon_rails_sidekiq_memory} >> .env; fi
       if [ -n "${TF_VAR_aws_launch_configuration_mastodon_instance_type}" ]; then echo TF_VAR_aws_launch_configuration_mastodon_instance_type=${TF_VAR_aws_launch_configuration_mastodon_instance_type} >> .env; fi
+      if [ -n "${TF_VAR_mastodon_administrator_name}" ]; then echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_administrator_name} >> .env; fi
       if [ -n "${TF_VAR_mastodon_db_pass}" ]; then echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_db_pass} >> .env; fi
       if [ -n "${TF_VAR_mastodon_docker_image_tag}" ]; then echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env; fi
       if [ -n "${TF_VAR_mastodon_otp_secret}" ]; then echo TF_VAR_mastodon_otp_secret=${TF_VAR_mastodon_otp_secret} >> .env; fi
