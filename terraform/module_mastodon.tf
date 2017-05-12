@@ -10,6 +10,7 @@ module "mastodon" {
   aws_ecs_task_definition_mastodon_rails_sidekiq_memory             = "${var.aws_ecs_task_definition_mastodon_rails_sidekiq_memory}"
   aws_elasticache_cluster_node_type                                 = "${var.aws_elasticache_cluster_node_type}"
   aws_launch_configuration_mastodon_instance_type                   = "${var.aws_launch_configuration_mastodon_instance_type}"
+  aws_resource_base_name                                            = "${var.aws_resource_base_name}"
   mastodon_aws_access_key_id                                        = "${var.mastodon_aws_access_key_id}"
   mastodon_aws_secret_access_key                                    = "${var.mastodon_aws_secret_access_key}"
   mastodon_administrator_name                                       = "${var.mastodon_administrator_name}"

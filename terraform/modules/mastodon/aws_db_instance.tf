@@ -9,7 +9,7 @@ resource "aws_db_instance" "mastodon" {
   identifier                 = "mastodon"
   instance_class             = "${var.aws_db_instance_mastodon_instance_class}"
   multi_az                   = false
-  name                       = "mastodon"
+  name                       = "${var.aws_resource_base_name}"
   parameter_group_name       = "${aws_db_parameter_group.mastodon.name}"
   password                   = "${var.mastodon_db_pass}"
   skip_final_snapshot        = true

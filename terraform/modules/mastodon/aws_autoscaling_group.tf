@@ -4,7 +4,7 @@ resource "aws_autoscaling_group" "mastodon" {
   launch_configuration = "${aws_launch_configuration.mastodon.name}"
   max_size             = 1
   min_size             = 1
-  name                 = "mastodon"
+  name                 = "${var.aws_resource_base_name}"
 
   vpc_zone_identifier = [
     "${aws_subnet.mastodon_public_a.id}",

@@ -36,6 +36,8 @@ variable "aws_elasticache_cluster_node_type" {}
 
 variable "aws_launch_configuration_mastodon_instance_type" {}
 
+variable "aws_resource_base_name" {}
+
 variable "mastodon_administrator_name" {}
 
 variable "mastodon_aws_access_key_id" {}
