@@ -1,5 +1,5 @@
 resource "aws_elasticache_cluster" "mastodon" {
-  cluster_id           = "mastodon"
+  cluster_id           = "${var.aws_resource_base_name}"
   engine               = "redis"
   node_type            = "${var.aws_elasticache_cluster_node_type}"
   port                 = 6379

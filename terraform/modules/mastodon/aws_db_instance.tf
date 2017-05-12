@@ -6,10 +6,10 @@ resource "aws_db_instance" "mastodon" {
   db_subnet_group_name       = "${aws_db_subnet_group.mastodon.name}"
   engine                     = "postgres"
   engine_version             = "9.6.1"
-  identifier                 = "mastodon"
+  identifier                 = "${var.aws_resource_base_name}"
   instance_class             = "${var.aws_db_instance_mastodon_instance_class}"
   multi_az                   = false
-  name                       = "${var.aws_resource_base_name}"
+  name                       = "mastodon"
   parameter_group_name       = "${aws_db_parameter_group.mastodon.name}"
   password                   = "${var.mastodon_db_pass}"
   skip_final_snapshot        = true
