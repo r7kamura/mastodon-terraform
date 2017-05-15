@@ -178,7 +178,7 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_redis_port                  = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
     mastodon_s3_bucket                   = "${var.aws_s3_bucket_name}"
     mastodon_s3_cloudfront_host          = "${var.mastodon_s3_cloudfront_host}"
-    mastodon_s3_region                   = "${aws_region.current.name}"
+    mastodon_s3_region                   = "${data.aws_region.current.name}"
     mastodon_secret_key_base             = "${var.mastodon_secret_key_base}"
     mastodon_single_user_mode            = "${var.mastodon_single_user_mode}"
     mastodon_smtp_auth_method            = "${var.mastodon_smtp_auth_method}"
