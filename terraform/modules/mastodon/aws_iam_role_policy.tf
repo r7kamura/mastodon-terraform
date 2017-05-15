@@ -8,7 +8,8 @@ resource "aws_iam_role_policy" "mastodon_rails" {
       {
         "Action": [
           "s3:DeleteObject",
-          "s3:PutObject"
+          "s3:PutObject",
+          "s3:PutObjectAcl"
         ],
         "Effect": "Allow",
         "Resource": [
