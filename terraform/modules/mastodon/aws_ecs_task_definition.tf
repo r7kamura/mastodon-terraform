@@ -1,5 +1,5 @@
 resource "aws_ecs_task_definition" "mastodon_node_streaming" {
-  family = "mastodon_node_streaming"
+  family = "${var.aws_resource_base_name}_node_streaming"
 
   container_definitions = <<-JSON
   [
@@ -10,13 +10,13 @@ resource "aws_ecs_task_definition" "mastodon_node_streaming" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "mastodon",
+          "awslogs-group": "${var.aws_resource_base_name}",
           "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "streaming"
         }
       },
       "memory": ${var.aws_ecs_task_definition_mastodon_node_streaming_memory},
-      "name": "mastodon_node_streaming",
+      "name": "${var.aws_resource_base_name}_node_streaming",
       "portMappings": [
         {
           "containerPort": ${var.mastodon_node_streaming_port},
@@ -29,7 +29,7 @@ resource "aws_ecs_task_definition" "mastodon_node_streaming" {
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_db_migration" {
-  family = "mastodon_rails_db_migration"
+  family = "${var.aws_resource_base_name}_rails_db_migration"
 
   container_definitions = <<-JSON
   [
@@ -40,20 +40,20 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_migration" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "mastodon",
+          "awslogs-group": "${var.aws_resource_base_name}",
           "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_db_migration"
         }
       },
       "memory": ${var.aws_ecs_task_definition_mastodon_rails_db_migration_memory},
-      "name": "mastodon_rails_db_migration"
+      "name": "${var.aws_resource_base_name}_rails_db_migration"
     }
   ]
   JSON
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_db_set_up" {
-  family = "mastodon_rails_db_set_up"
+  family = "${var.aws_resource_base_name}_rails_db_set_up"
 
   container_definitions = <<-JSON
   [
@@ -64,20 +64,20 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_set_up" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "mastodon",
+          "awslogs-group": "${var.aws_resource_base_name}",
           "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_db_set_up"
         }
       },
       "memory": ${var.aws_ecs_task_definition_mastodon_rails_db_set_up_memory},
-      "name": "mastodon_rails_db_set_up"
+      "name": "${var.aws_resource_base_name}_rails_db_set_up"
     }
   ]
   JSON
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_mastodon_make_admin" {
-  family = "mastodon_rails_mastodon_make_admin"
+  family = "${var.aws_resource_base_name}_rails_mastodon_make_admin"
 
   container_definitions = <<-JSON
   [
@@ -88,20 +88,20 @@ resource "aws_ecs_task_definition" "mastodon_rails_mastodon_make_admin" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "mastodon",
+          "awslogs-group": "${var.aws_resource_base_name}",
           "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_mastodon_make_admin"
         }
       },
       "memory": ${var.aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory},
-      "name": "mastodon_rails_mastodon_make_admin"
+      "name": "${var.aws_resource_base_name}_rails_mastodon_make_admin"
     }
   ]
   JSON
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_puma" {
-  family = "mastodon_rails_puma"
+  family = "${var.aws_resource_base_name}_rails_puma"
 
   container_definitions = <<-JSON
   [
@@ -112,13 +112,13 @@ resource "aws_ecs_task_definition" "mastodon_rails_puma" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "mastodon",
+          "awslogs-group": "${var.aws_resource_base_name}",
           "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_puma"
         }
       },
       "memory": ${var.aws_ecs_task_definition_mastodon_rails_puma_memory},
-      "name": "mastodon_rails_puma",
+      "name": "${var.aws_resource_base_name}_rails_puma",
       "portMappings": [
         {
           "containerPort": 3000,
@@ -131,7 +131,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_puma" {
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_sidekiq" {
-  family = "mastodon_rails_sidekiq"
+  family = "${var.aws_resource_base_name}_rails_sidekiq"
 
   container_definitions = <<-JSON
   [
@@ -142,13 +142,13 @@ resource "aws_ecs_task_definition" "mastodon_rails_sidekiq" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "mastodon",
+          "awslogs-group": "${var.aws_resource_base_name}",
           "awslogs-region": "${data.aws_region.current.name}",
           "awslogs-stream-prefix": "rails_sidekiq"
         }
       },
       "memory": ${var.aws_ecs_task_definition_mastodon_rails_sidekiq_memory},
-      "name": "mastodon_rails_sidekiq"
+      "name": "${var.aws_resource_base_name}_rails_sidekiq"
     }
   ]
   JSON
