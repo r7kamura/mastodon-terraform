@@ -49,7 +49,7 @@ resource "aws_iam_role" "mastodon_rails" {
       "Action": "sts:AssumeRole",
       "Effect": "Allow",
       "Principal": {
-        "Service": "ec2.amazonaws.com"
+        "Service": "ecs-tasks.amazonaws.com"
       }
     }
   ]
