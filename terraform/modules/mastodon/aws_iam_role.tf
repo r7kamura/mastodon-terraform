@@ -1,6 +1,4 @@
 resource "aws_iam_role" "mastodon_ec2" {
-  name = "${var.aws_resource_base_name}_ec2"
-
   assume_role_policy = <<-JSON
   {
     "Version": "2012-10-17",
@@ -16,11 +14,11 @@ resource "aws_iam_role" "mastodon_ec2" {
     ]
   }
   JSON
+
+  name = "${var.aws_resource_base_name}_ec2"
 }
 
 resource "aws_iam_role" "mastodon_ecs" {
-  name = "${var.aws_resource_base_name}_ecs"
-
   assume_role_policy = <<-JSON
   {
     "Version": "2012-10-17",
@@ -36,11 +34,11 @@ resource "aws_iam_role" "mastodon_ecs" {
     ]
   }
   JSON
+
+  name = "${var.aws_resource_base_name}_ecs"
 }
 
 resource "aws_iam_role" "mastodon_rails" {
-  name = "${var.aws_resource_base_name}_rails"
-
   assume_role_policy = <<-JSON
   {
     "Version": "2012-10-17",
@@ -55,4 +53,6 @@ resource "aws_iam_role" "mastodon_rails" {
     ]
   }
   JSON
+
+  name = "${var.aws_resource_base_name}_rails"
 }
