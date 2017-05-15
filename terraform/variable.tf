@@ -46,6 +46,10 @@ variable "aws_resource_base_name" {
   default = "mastodon"
 }
 
+variable "aws_s3_bucket_name" {
+  default = ""
+}
+
 variable "mastodon_administrator_name" {
   default = ""
 }
@@ -104,31 +108,7 @@ variable "mastodon_prepared_statements" {
   default = "true"
 }
 
-variable "mastodon_s3_bucket" {
-  default = ""
-}
-
 variable "mastodon_s3_cloudfront_host" {
-  default = ""
-}
-
-variable "mastodon_s3_enabled" {
-  default = "false"
-}
-
-variable "mastodon_s3_endpoint" {
-  default = ""
-}
-
-variable "mastodon_s3_hostname" {
-  default = ""
-}
-
-variable "mastodon_s3_protocol" {
-  default = ""
-}
-
-variable "mastodon_s3_region" {
   default = ""
 }
 

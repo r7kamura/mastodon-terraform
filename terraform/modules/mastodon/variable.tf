@@ -38,6 +38,8 @@ variable "aws_launch_configuration_mastodon_instance_type" {}
 
 variable "aws_resource_base_name" {}
 
+variable "aws_s3_bucket_name" {}
+
 variable "mastodon_administrator_name" {}
 
 variable "mastodon_aws_access_key_id" {}
@@ -70,19 +72,7 @@ variable "mastodon_paperclip_secret" {}
 
 variable "mastodon_prepared_statements" {}
 
-variable "mastodon_s3_bucket" {}
-
 variable "mastodon_s3_cloudfront_host" {}
-
-variable "mastodon_s3_enabled" {}
-
-variable "mastodon_s3_endpoint" {}
-
-variable "mastodon_s3_hostname" {}
-
-variable "mastodon_s3_protocol" {}
-
-variable "mastodon_s3_region" {}
 
 variable "mastodon_secret_key_base" {}
 

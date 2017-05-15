@@ -24,6 +24,7 @@ dependencies:
       if [ -n "${TF_VAR_aws_ecs_task_definition_mastodon_rails_sidekiq_memory}" ]; then echo aws_ecs_task_definition_mastodon_rails_sidekiq_memory=${aws_ecs_task_definition_mastodon_rails_sidekiq_memory} >> .env; fi
       if [ -n "${TF_VAR_aws_launch_configuration_mastodon_instance_type}" ]; then echo TF_VAR_aws_launch_configuration_mastodon_instance_type=${TF_VAR_aws_launch_configuration_mastodon_instance_type} >> .env; fi
       if [ -n "${TF_VAR_aws_resource_base_name}" ]; then echo TF_VAR_aws_resource_base_name=${TF_VAR_aws_resource_base_name} >> .env; fi
+      if [ -n "${TF_VAR_aws_s3_bucket_name}" ]; then echo TF_VAR_aws_s3_bucket_name=${TF_VAR_aws_s3_bucket_name} >> .env; fi
       if [ -n "${TF_VAR_mastodon_administrator_name}" ]; then echo TF_VAR_mastodon_administrator_name=${TF_VAR_mastodon_administrator_name} >> .env; fi
       if [ -n "${TF_VAR_mastodon_db_pass}" ]; then echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_db_pass} >> .env; fi
       if [ -n "${TF_VAR_mastodon_docker_image_tag}" ]; then echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env; fi
@@ -43,13 +44,7 @@ dependencies:
       if [ -n "${TF_VAR_mastodon_paperclip_root_url}" ]; then echo TF_VAR_mastodon_paperclip_root_url=${TF_VAR_mastodon_paperclip_root_url} >> .env; fi
       if [ -n "${TF_VAR_mastodon_paperclip_secret}" ]; then echo TF_VAR_mastodon_paperclip_secret=${TF_VAR_mastodon_paperclip_secret} >> .env; fi
       if [ -n "${TF_VAR_mastodon_prepared_statements}" ]; then echo TF_VAR_mastodon_prepared_statements=${TF_VAR_mastodon_prepared_statements} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_s3_bucket}" ]; then echo TF_VAR_mastodon_s3_bucket=${TF_VAR_mastodon_s3_bucket} >> .env; fi
       if [ -n "${TF_VAR_mastodon_s3_cloudfront_host}" ]; then echo TF_VAR_mastodon_s3_cloudfront_host=${TF_VAR_mastodon_s3_cloudfront_host} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_s3_enabled}" ]; then echo TF_VAR_mastodon_s3_enabled=${TF_VAR_mastodon_s3_enabled} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_s3_endpoint}" ]; then echo TF_VAR_mastodon_s3_endpoint=${TF_VAR_mastodon_s3_endpoint} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_s3_hostname}" ]; then echo TF_VAR_mastodon_s3_hostname=${TF_VAR_mastodon_s3_hostname} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_s3_protocol}" ]; then echo TF_VAR_mastodon_s3_protocol=${TF_VAR_mastodon_s3_protocol} >> .env; fi
-      if [ -n "${TF_VAR_mastodon_s3_region}" ]; then echo TF_VAR_mastodon_s3_region=${TF_VAR_mastodon_s3_region} >> .env; fi
       if [ -n "${TF_VAR_mastodon_single_user_mode}" ]; then echo TF_VAR_mastodon_single_user_mode=${TF_VAR_mastodon_single_user_mode} >> .env; fi
       if [ -n "${TF_VAR_mastodon_smtp_auth_method}" ]; then echo TF_VAR_mastodon_smtp_auth_method=${TF_VAR_mastodon_smtp_auth_method} >> .env; fi
       if [ -n "${TF_VAR_mastodon_smtp_delivery_method}" ]; then echo TF_VAR_mastodon_smtp_delivery_method=${TF_VAR_mastodon_smtp_delivery_method} >> .env; fi

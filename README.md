@@ -88,6 +88,12 @@ Where to locate the terraform state file on the specified AWS S3 bucket.
 
 e.g. `terraform.tfstate` (recommended)
 
+### TF_VAR_aws_s3_bucket_name
+
+A valid S3 bucket name for uploading files (e.g. user profile images).
+
+e.g. `my-mastodon`
+
 ### TF_VAR_mastodon_db_pass
 
 Database password.
@@ -272,13 +278,7 @@ default: `false`
 - `TF_VAR_mastodon_paperclip_root_url`
 - `TF_VAR_mastodon_paperclip_secret`
 - `TF_VAR_mastodon_prepared_statements`
-- `TF_VAR_mastodon_s3_bucket`
 - `TF_VAR_mastodon_s3_cloudfront_host`
-- `TF_VAR_mastodon_s3_enabled`
-- `TF_VAR_mastodon_s3_endpoint`
-- `TF_VAR_mastodon_s3_hostname`
-- `TF_VAR_mastodon_s3_protocol`
-- `TF_VAR_mastodon_s3_region`
 - `TF_VAR_mastodon_smtp_auth_method`
 - `TF_VAR_mastodon_smtp_delivery_method`
 - `TF_VAR_mastodon_smtp_domain`

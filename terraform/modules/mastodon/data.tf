@@ -91,19 +91,7 @@ data "template_file" "mastodon_environment_variables_rails" {
     },
     {
       "name": "S3_ENABLED",
-      "value": "$${mastodon_s3_enabled}"
-    },
-    {
-      "name": "S3_ENDPOINT",
-      "value": "$${mastodon_s3_endpoint}"
-    },
-    {
-      "name": "S3_HOSTNAME",
-      "value": "$${mastodon_s3_hostname}"
-    },
-    {
-      "name": "S3_PROTOCOL",
-      "value": "$${mastodon_s3_protocol}"
+      "value": "true"
     },
     {
       "name": "S3_REGION",
@@ -188,13 +176,9 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_prepared_statements         = "${var.mastodon_prepared_statements}"
     mastodon_redis_host                  = "${aws_elasticache_cluster.mastodon.cache_nodes.0.address}"
     mastodon_redis_port                  = "${aws_elasticache_cluster.mastodon.cache_nodes.0.port}"
-    mastodon_s3_bucket                   = "${var.mastodon_s3_bucket}"
+    mastodon_s3_bucket                   = "${var.aws_s3_bucket.mastodon.id}"
     mastodon_s3_cloudfront_host          = "${var.mastodon_s3_cloudfront_host}"
-    mastodon_s3_enabled                  = "${var.mastodon_s3_enabled}"
-    mastodon_s3_endpoint                 = "${var.mastodon_s3_endpoint}"
-    mastodon_s3_hostname                 = "${var.mastodon_s3_hostname}"
-    mastodon_s3_protocol                 = "${var.mastodon_s3_protocol}"
-    mastodon_s3_region                   = "${var.mastodon_s3_region}"
+    mastodon_s3_region                   = "${aws_region.current.name}"
     mastodon_secret_key_base             = "${var.mastodon_secret_key_base}"
     mastodon_single_user_mode            = "${var.mastodon_single_user_mode}"
     mastodon_smtp_auth_method            = "${var.mastodon_smtp_auth_method}"
