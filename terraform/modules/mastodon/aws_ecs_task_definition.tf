@@ -51,7 +51,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_migration" {
   ]
   JSON
 
-  task_role_arn = "${aws_iam_role.mastodon_rails}"
+  task_role_arn = "${aws_iam_role.mastodon_rails.arn}"
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_db_set_up" {
@@ -77,7 +77,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_set_up" {
   ]
   JSON
 
-  task_role_arn = "${aws_iam_role.mastodon_rails}"
+  task_role_arn = "${aws_iam_role.mastodon_rails.arn}"
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_mastodon_make_admin" {
@@ -103,7 +103,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_mastodon_make_admin" {
   ]
   JSON
 
-  task_role_arn = "${aws_iam_role.mastodon_rails}"
+  task_role_arn = "${aws_iam_role.mastodon_rails.arn}"
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_puma" {
@@ -135,7 +135,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_puma" {
   ]
   JSON
 
-  task_role_arn = "${aws_iam_role.mastodon_rails}"
+  task_role_arn = "${aws_iam_role.mastodon_rails.arn}"
 }
 
 resource "aws_ecs_task_definition" "mastodon_rails_sidekiq" {
@@ -161,5 +161,5 @@ resource "aws_ecs_task_definition" "mastodon_rails_sidekiq" {
   ]
   JSON
 
-  task_role_arn = "${aws_iam_role.mastodon_rails}"
+  task_role_arn = "${aws_iam_role.mastodon_rails.arn}"
 }
