@@ -4,7 +4,6 @@ resource "aws_iam_role" "mastodon_ec2" {
     "Version": "2012-10-17",
     "Statement": [
       {
-        "Sid": "",
         "Effect": "Allow",
         "Principal": {
           "Service": "ec2.amazonaws.com"
@@ -24,7 +23,6 @@ resource "aws_iam_role" "mastodon_ecs" {
     "Version": "2012-10-17",
     "Statement": [
       {
-        "Sid": "",
         "Effect": "Allow",
         "Principal": {
           "Service": "ecs.amazonaws.com"
