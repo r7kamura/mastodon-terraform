@@ -26,6 +26,12 @@ variable "aws_ecs_optimized_ami_ids" {
   }
 }
 
+variable "aws_ecs_service_desired_count_node_streaming" {}
+
+variable "aws_ecs_service_desired_count_rails_puma" {}
+
+variable "aws_ecs_service_desired_count_rails_sidekiq" {}
+
 variable "aws_ecs_task_definition_mastodon_node_streaming_memory" {}
 
 variable "aws_ecs_task_definition_mastodon_rails_db_migration_memory" {}

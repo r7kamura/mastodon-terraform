@@ -22,6 +22,18 @@ variable "aws_db_instance_mastodon_instance_class" {
   default = "db.t2.micro"
 }
 
+variable "aws_ecs_service_desired_count_node_streaming" {
+  default = 1
+}
+
+variable "aws_ecs_service_desired_count_rails_puma" {
+  default = 1
+}
+
+variable "aws_ecs_service_desired_count_rails_sidekiq" {
+  default = 1
+}
+
 variable "aws_ecs_task_definition_mastodon_node_streaming_memory" {
   default = "300"
 }
