@@ -1,6 +1,9 @@
 module "mastodon" {
   aws_acm_certificate_arn                                           = "${var.aws_acm_certificate_arn}"
   aws_acm_certificate_arn_for_alb                                   = "${var.aws_acm_certificate_arn_for_alb}"
+  aws_autoscaling_group_desired_capacity                            = "${var.aws_autoscaling_group_desired_capacity}"
+  aws_autoscaling_group_max_size                                    = "${var.aws_autoscaling_group_max_size}"
+  aws_autoscaling_group_min_size                                    = "${var.aws_autoscaling_group_min_size}"
   aws_db_instance_mastodon_instance_class                           = "${var.aws_db_instance_mastodon_instance_class}"
   aws_ecs_task_definition_mastodon_node_streaming_memory            = "${var.aws_ecs_task_definition_mastodon_node_streaming_memory}"
   aws_ecs_task_definition_mastodon_rails_db_migration_memory        = "${var.aws_ecs_task_definition_mastodon_rails_db_migration_memory}"

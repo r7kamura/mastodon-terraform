@@ -6,6 +6,18 @@ variable "aws_acm_certificate_arn_for_alb" {
   default = ""
 }
 
+variable "aws_autoscaling_group_desired_capacity" {
+  default = 1
+}
+
+variable "aws_autoscaling_group_max_size" {
+  default = 1
+}
+
+variable "aws_autoscaling_group_min_size" {
+  default = 1
+}
+
 variable "aws_db_instance_mastodon_instance_class" {
   default = "db.t2.micro"
 }

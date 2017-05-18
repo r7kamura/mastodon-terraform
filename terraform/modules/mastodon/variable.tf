@@ -2,6 +2,12 @@ variable "aws_acm_certificate_arn" {}
 
 variable "aws_acm_certificate_arn_for_alb" {}
 
+variable "aws_autoscaling_group_desired_capacity" {}
+
+variable "aws_autoscaling_group_max_size" {}
+
+variable "aws_autoscaling_group_min_size" {}
+
 variable "aws_db_instance_mastodon_instance_class" {}
 
 variable "aws_ecs_optimized_ami_ids" {
