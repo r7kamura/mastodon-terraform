@@ -36,7 +36,7 @@ resource "aws_ecs_task_definition" "mastodon_rails_db_migration" {
     {
       "command": ["bundle", "exec", "rake", "db:migrate"],
       "environment": ${data.template_file.mastodon_environment_variables_rails.rendered},
-      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag}",
+      "image": "${replace(aws_ecr_repository.mastodon.repository_url, "https://", "")}:${var.mastodon_docker_image_tag_rails_db_migration}",
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {

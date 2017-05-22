@@ -104,6 +104,10 @@ variable "mastodon_docker_image_tag" {
   default = "dummy"
 }
 
+variable "mastodon_docker_image_tag_rails_db_migration" {
+  default = "dummy"
+}
+
 variable "mastodon_email_domain_blacklist" {
   default = ""
 }
