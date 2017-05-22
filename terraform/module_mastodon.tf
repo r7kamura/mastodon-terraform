@@ -26,6 +26,7 @@ module "mastodon" {
   mastodon_db_user                                                  = "${var.mastodon_db_user}"
   mastodon_default_locale                                           = "${var.mastodon_default_locale}"
   mastodon_docker_image_tag                                         = "${var.mastodon_docker_image_tag}"
+  mastodon_docker_image_tag_rails_db_migration                      = "${var.mastodon_docker_image_tag_rails_db_migration}"
   mastodon_email_domain_blacklist                                   = "${var.mastodon_email_domain_blacklist}"
   mastodon_email_domain_whitelist                                   = "${var.mastodon_email_domain_whitelist}"
   mastodon_local_domain                                             = "${var.mastodon_local_domain}"

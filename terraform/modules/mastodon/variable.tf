@@ -68,6 +68,8 @@ variable "mastodon_default_locale" {}
 
 variable "mastodon_docker_image_tag" {}
 
+variable "mastodon_docker_image_tag_rails_db_migration" {}
+
 variable "mastodon_email_domain_blacklist" {}
 
 variable "mastodon_email_domain_whitelist" {}

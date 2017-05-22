@@ -120,6 +120,15 @@ e.g. `123`
 
 Note: this variable is not required at the 1st time because we need to create ECR repository before building Mastodon Docker image.
 
+### TF_VAR_mastodon_docker_image_tag_rails_db_migration
+
+Mastodon Docker image tag to detect which image to be deployed on ECS for `db:migrate` task.
+Why this value exists is because sometimes you may want to apply database migration before deploying new revision of application.
+
+e.g. `124`
+
+Note: this variable is not required at the 1st time because we need to create ECR repository before building Mastodon Docker image.
+
 ### TF_VAR_mastodon_local_domain
 
 The domain that your Mastodon instance will run on.

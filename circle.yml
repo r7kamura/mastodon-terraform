@@ -34,6 +34,7 @@ dependencies:
       if [ -n "${TF_VAR_mastodon_administrator_name}" ]; then echo TF_VAR_mastodon_administrator_name=${TF_VAR_mastodon_administrator_name} >> .env; fi
       if [ -n "${TF_VAR_mastodon_db_pass}" ]; then echo TF_VAR_mastodon_db_pass=${TF_VAR_mastodon_db_pass} >> .env; fi
       if [ -n "${TF_VAR_mastodon_docker_image_tag}" ]; then echo TF_VAR_mastodon_docker_image_tag=${TF_VAR_mastodon_docker_image_tag} >> .env; fi
+      if [ -n "${TF_VAR_mastodon_docker_image_tag_rails_db_migration}" ]; then echo TF_VAR_mastodon_docker_image_tag_rails_db_migration=${TF_VAR_mastodon_docker_image_tag_rails_db_migration} >> .env; fi
       if [ -n "${TF_VAR_mastodon_otp_secret}" ]; then echo TF_VAR_mastodon_otp_secret=${TF_VAR_mastodon_otp_secret} >> .env; fi
       if [ -n "${TF_VAR_mastodon_secret_key_base}" ]; then echo TF_VAR_mastodon_secret_key_base=${TF_VAR_mastodon_secret_key_base} >> .env; fi
       if [ -n "${TF_VAR_mastodon_aws_access_key_id}" ]; then echo TF_VAR_mastodon_aws_access_key_id=${TF_VAR_mastodon_aws_access_key_id} >> .env; fi
