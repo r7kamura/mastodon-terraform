@@ -25,6 +25,28 @@ resource "aws_cloudfront_distribution" "mastodon" {
     }
   }
 
+  cache_behavior {
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    default_ttl            = 3600
+    max_ttl                = 86400
+    min_ttl                = 0
+    viewer_protocol_policy = "allow-all"
+    path_pattern           = "/packs/*"
+    compress               = true
+    target_origin_id       = "mastodon_alb"
+
+    forwarded_values {
+      query_string = false
+
+      cookies {
+        forward = "none"
+      }
+
+      headers = ["CloudFront-Forwarded-Proto", "Origin"]
+    }
+  }
+
   custom_error_response {
     error_caching_min_ttl = 0
     error_code            = 404
